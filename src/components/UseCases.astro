@@ -1,0 +1,75 @@
+---
+const cases = [
+  {
+    title: "For Students",
+    icon: "&#127891;",
+    accent: "#edff00",
+    points: [
+      "Organize class notes by subject with nested folders",
+      "Save research with Web Clipper",
+      "Forward syllabus emails directly to your notes",
+    ],
+    highlight: "$1.49/mo with .edu email",
+  },
+  {
+    title: "For Freelancers",
+    icon: "&#128188;",
+    accent: "#7eaacc",
+    points: [
+      "Track client projects with tags and smart folders",
+      "Share deliverables with public links",
+      "Keep everything encrypted and private",
+      "Templates for proposals, invoices, meeting notes",
+    ],
+    highlight: null,
+  },
+  {
+    title: "For Teams",
+    icon: "&#128101;",
+    accent: "#b08fd8",
+    points: [
+      "Collaborate on project documentation",
+      "Control access with viewer/editor roles",
+      "Track changes with activity feed",
+      "Discuss with threaded comments",
+    ],
+    highlight: null,
+  },
+];
+---
+
+<section id="usecases" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <h2 class="uppercase tracking-tight mb-4" style="font-family: var(--font-family-display); font-size: clamp(3rem, 8vw, 5.5rem); line-height: 0.9;">
+        Built for how <span class="text-noter-accent">you</span> work
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
+      {cases.map((c) => (
+        <div class="bg-noter-surface border border-noter-border rounded-xl overflow-hidden hover:-translate-y-1.5 group" style="transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+          <div class="h-1" style={`background: ${c.accent};`}></div>
+          <div class="p-6">
+            <div class="text-3xl mb-3" set:html={c.icon} />
+            <h3 class="text-lg font-semibold text-noter-text mb-4">{c.title}</h3>
+            <ul class="flex flex-col gap-3">
+              {c.points.map((p) => (
+                <li class="flex items-start gap-2 text-sm text-noter-text-muted">
+                  <span class="text-noter-green flex-shrink-0 mt-0.5">&#10003;</span>
+                  {p}
+                </li>
+              ))}
+              {c.highlight && (
+                <li class="flex items-start gap-2 text-sm font-semibold" style={`color: ${c.accent};`}>
+                  <span class="flex-shrink-0 mt-0.5">&#9733;</span>
+                  {c.highlight}
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

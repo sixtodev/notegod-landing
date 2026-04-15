@@ -1,0 +1,95 @@
+---
+const rows = [
+  { feature: "Rich Text (WYSIWYG)", ngFree: true, ngPro: true, joplin: false, notion: true, obsidian: false },
+  { feature: "E2E Encryption", ngFree: true, ngPro: true, joplin: true, notion: false, obsidian: false },
+  { feature: "Offline Mode", ngFree: true, ngPro: true, joplin: true, notion: false, obsidian: true },
+  { feature: "Google Drive", ngFree: false, ngPro: true, joplin: false, notion: false, obsidian: false },
+  { feature: "Email to Note", ngFree: false, ngPro: true, joplin: false, notion: false, obsidian: false },
+  { feature: "Web Clipper", ngFree: false, ngPro: true, joplin: true, notion: true, obsidian: false },
+  { feature: "Note Comments", ngFree: false, ngPro: true, joplin: false, notion: true, obsidian: false },
+  { feature: "Nested Folders", ngFree: false, ngPro: true, joplin: true, notion: false, obsidian: true },
+  { feature: "Smart Folders", ngFree: false, ngPro: true, joplin: false, notion: false, obsidian: false },
+  { feature: "Custom Branding", ngFree: false, ngPro: true, joplin: false, notion: false, obsidian: false },
+];
+
+const textRows = [
+  { feature: "Public Sharing", ngFree: "3 links", ngPro: "Unlimited", joplin: "Yes", notion: "Yes", obsidian: "$8/mo" },
+  { feature: "Price", ngFree: "Free", ngPro: "$2.99/mo", joplin: "$2.99/mo", notion: "Free", obsidian: "Free" },
+  { feature: "Storage", ngFree: "50 MB", ngPro: "1 GB", joplin: "2 GB", notion: "5 MB upload", obsidian: "Local" },
+];
+---
+
+<section id="comparison" class="py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <h2 class="uppercase tracking-tight mb-4" style="font-family: var(--font-family-display); font-size: clamp(3rem, 8vw, 5.5rem); line-height: 0.9;">
+        Why <span class="text-noter-accent">NoteGod</span>?
+      </h2>
+      <p class="text-noter-text-muted text-lg">See how we compare to the alternatives</p>
+    </div>
+
+    <div class="rounded-xl border border-noter-border overflow-hidden fade-up">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm" style="min-width: 700px;">
+          <thead>
+            <tr class="bg-noter-surface-hover">
+              <th class="text-left py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted">Feature</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">NoteGod Free</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-accent text-center border-x border-noter-accent/20" style="background: rgba(237,255,0,0.05);">NoteGod Pro</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">Joplin</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">Notion</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">Obsidian</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr class={i % 2 === 0 ? "bg-noter-surface/30" : ""}>
+                <td class="py-3 px-4 border-b border-noter-border text-noter-text-muted">{row.feature}</td>
+                <td class="py-3 px-4 border-b border-noter-border text-center">
+                  {row.ngFree
+                    ? <span class="text-noter-green font-bold">&#10003;</span>
+                    : <span class="text-noter-red">&#10007;</span>
+                  }
+                </td>
+                <td class="py-3 px-4 border-b border-noter-border text-center border-x border-noter-accent/20" style="background: rgba(237,255,0,0.03);">
+                  {row.ngPro
+                    ? <span class="text-noter-green font-bold">&#10003;</span>
+                    : <span class="text-noter-red">&#10007;</span>
+                  }
+                </td>
+                <td class="py-3 px-4 border-b border-noter-border text-center">
+                  {row.joplin
+                    ? <span class="text-noter-green font-bold">&#10003;</span>
+                    : <span class="text-noter-red">&#10007;</span>
+                  }
+                </td>
+                <td class="py-3 px-4 border-b border-noter-border text-center">
+                  {row.notion
+                    ? <span class="text-noter-green font-bold">&#10003;</span>
+                    : <span class="text-noter-red">&#10007;</span>
+                  }
+                </td>
+                <td class="py-3 px-4 border-b border-noter-border text-center">
+                  {row.obsidian
+                    ? <span class="text-noter-green font-bold">&#10003;</span>
+                    : <span class="text-noter-red">&#10007;</span>
+                  }
+                </td>
+              </tr>
+            ))}
+            {textRows.map((row, i) => (
+              <tr class={(rows.length + i) % 2 === 0 ? "bg-noter-surface/30" : ""}>
+                <td class={`py-3 px-4 border-b border-noter-border text-noter-text-muted ${row.feature === 'Price' ? 'font-semibold text-noter-text' : ''}`}>{row.feature}</td>
+                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text">{row.ngFree}</td>
+                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-accent font-semibold border-x border-noter-accent/20" style="background: rgba(237,255,0,0.03);">{row.ngPro}</td>
+                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text-dim">{row.joplin}</td>
+                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text-dim">{row.notion}</td>
+                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text-dim">{row.obsidian}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

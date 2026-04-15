@@ -1,0 +1,305 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout
+  title="Privacy Policy - NoteGod"
+  description="NoteGod Privacy Policy. Learn how we collect, use, and protect your data with AES-256-GCM encryption and zero-knowledge architecture."
+>
+  <Navbar />
+  <main class="pt-24 pb-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <header class="mb-12">
+        <h1 class="text-4xl font-bold text-noter-text mb-3">Privacy Policy</h1>
+        <p class="text-noter-text-dim text-sm">Last updated: March 7, 2026</p>
+      </header>
+
+      <div class="space-y-10 text-noter-text-muted text-[15px] leading-relaxed">
+
+        <!-- Introduction -->
+        <section>
+          <p>
+            NoteGod ("we", "us", or "our") operates the NoteGod application and website at
+            <a href="https://notegod.io" class="text-noter-accent hover:underline">notegod.io</a>.
+            This Privacy Policy explains how we collect, use, store, and protect your personal information
+            when you use our service. By using NoteGod, you agree to the practices described in this policy.
+          </p>
+        </section>
+
+        <!-- 1. Data We Collect -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">1. Data We Collect</h2>
+
+          <h3 class="text-lg font-medium text-noter-text mb-2">1.1 Account Information</h3>
+          <p class="mb-4">
+            When you create an account, we collect your name, email address, and authentication credentials.
+            If you sign up using a third-party provider (Google or GitHub), we receive your basic profile
+            information from that provider.
+          </p>
+
+          <h3 class="text-lg font-medium text-noter-text mb-2">1.2 Note Content</h3>
+          <p class="mb-4">
+            Your notes and associated metadata (titles, tags, folder structure) are stored on our servers.
+            All note content is encrypted with AES-256-GCM before storage using a zero-knowledge architecture,
+            meaning we cannot read or access the plaintext content of your notes.
+          </p>
+
+          <h3 class="text-lg font-medium text-noter-text mb-2">1.3 Billing Information</h3>
+          <p class="mb-4">
+            If you subscribe to a paid plan, payment processing is handled entirely by Stripe. We do not
+            store your credit card number or full payment details. We retain only a Stripe customer ID,
+            subscription status, and basic transaction records (amount, date, plan type) for our records.
+          </p>
+
+          <h3 class="text-lg font-medium text-noter-text mb-2">1.4 Google Drive Integration</h3>
+          <p class="mb-4">
+            If you enable Google Drive integration, we store an OAuth refresh token to maintain your
+            connection. This token grants access only to NoteGod-specific files and folders within your
+            Google Drive. You can revoke this access at any time from your NoteGod settings or your
+            Google account.
+          </p>
+
+          <h3 class="text-lg font-medium text-noter-text mb-2">1.5 Usage Data</h3>
+          <p>
+            We may collect anonymized usage data such as feature usage patterns, device type, browser type,
+            and general geographic region. This data is used solely to improve the service and is never
+            tied to your identity or note content.
+          </p>
+        </section>
+
+        <!-- 2. How We Use Your Data -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">2. How We Use Your Data</h2>
+          <p class="mb-3">We use your information for the following purposes:</p>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>To provide, maintain, and improve the NoteGod service</li>
+            <li>To authenticate your identity and manage your account</li>
+            <li>To process payments and manage subscriptions via Stripe</li>
+            <li>To enable Google Drive synchronization when you opt in</li>
+            <li>To send transactional emails (account confirmation, password resets, billing receipts)</li>
+            <li>To respond to support requests and communicate about service changes</li>
+            <li>To detect and prevent fraud, abuse, or security incidents</li>
+          </ul>
+          <p class="mt-4">
+            We do not sell, rent, or share your personal data with advertisers or data brokers. We do not
+            use your note content for training machine learning models or for any purpose other than
+            providing you the service.
+          </p>
+        </section>
+
+        <!-- 3. Data Storage and Security -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">3. Data Storage and Security</h2>
+          <p class="mb-3">We take security seriously and implement multiple layers of protection:</p>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>
+              <strong class="text-noter-text">Encryption at rest:</strong> All note content is encrypted
+              using AES-256-GCM before being stored. Encryption keys are derived in a way that prevents
+              us from reading your notes.
+            </li>
+            <li>
+              <strong class="text-noter-text">Encryption in transit:</strong> All communication between
+              your device and our servers uses TLS 1.2 or higher.
+            </li>
+            <li>
+              <strong class="text-noter-text">Database security:</strong> We use Supabase with
+              Row-Level Security (RLS) policies, ensuring each user can only access their own data at
+              the database level.
+            </li>
+            <li>
+              <strong class="text-noter-text">Access controls:</strong> Internal access to infrastructure
+              is restricted and monitored. We follow the principle of least privilege.
+            </li>
+          </ul>
+          <p class="mt-4">
+            While we strive to protect your data, no method of electronic transmission or storage is
+            100% secure. We cannot guarantee absolute security, but we are committed to using
+            industry-standard practices to safeguard your information.
+          </p>
+        </section>
+
+        <!-- 4. Third-Party Services -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">4. Third-Party Services</h2>
+          <p class="mb-3">We rely on the following third-party services to operate NoteGod:</p>
+
+          <div class="space-y-4">
+            <div class="bg-noter-surface border border-noter-border rounded-lg p-4">
+              <h3 class="text-base font-medium text-noter-text mb-1">Supabase</h3>
+              <p class="text-sm">Database hosting, authentication, and real-time sync. Your encrypted data is stored in Supabase-managed PostgreSQL databases. See <a href="https://supabase.com/privacy" class="text-noter-accent hover:underline" target="_blank" rel="noopener noreferrer">Supabase Privacy Policy</a>.</p>
+            </div>
+            <div class="bg-noter-surface border border-noter-border rounded-lg p-4">
+              <h3 class="text-base font-medium text-noter-text mb-1">Stripe</h3>
+              <p class="text-sm">Payment processing for paid subscriptions. Stripe handles all credit card data and is PCI DSS Level 1 certified. See <a href="https://stripe.com/privacy" class="text-noter-accent hover:underline" target="_blank" rel="noopener noreferrer">Stripe Privacy Policy</a>.</p>
+            </div>
+            <div class="bg-noter-surface border border-noter-border rounded-lg p-4">
+              <h3 class="text-base font-medium text-noter-text mb-1">Google</h3>
+              <p class="text-sm">OAuth authentication and Google Drive integration. We request only the minimum scopes necessary for functionality. See <a href="https://policies.google.com/privacy" class="text-noter-accent hover:underline" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
+            </div>
+          </div>
+
+          <p class="mt-4">
+            Each third-party provider processes your data in accordance with their own privacy policies.
+            We encourage you to review them.
+          </p>
+        </section>
+
+        <!-- 5. Cookies -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">5. Cookies</h2>
+          <p class="mb-3">NoteGod uses a minimal number of cookies, all of which are essential for the service to function:</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border border-noter-border rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-noter-surface">
+                  <th class="text-left p-3 font-medium text-noter-text border-b border-noter-border">Cookie</th>
+                  <th class="text-left p-3 font-medium text-noter-text border-b border-noter-border">Purpose</th>
+                  <th class="text-left p-3 font-medium text-noter-text border-b border-noter-border">Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-noter-border">
+                  <td class="p-3 font-mono text-xs text-noter-accent">sb-*-auth-token</td>
+                  <td class="p-3">Supabase authentication session</td>
+                  <td class="p-3">Session / 1 year</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono text-xs text-noter-accent">gdrive_oauth</td>
+                  <td class="p-3">Google Drive OAuth state (if integration enabled)</td>
+                  <td class="p-3">Session</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4">
+            We do not use any analytics, advertising, or tracking cookies. We do not participate in
+            cross-site tracking.
+          </p>
+        </section>
+
+        <!-- 6. Data Retention -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">6. Data Retention</h2>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>
+              <strong class="text-noter-text">Active accounts:</strong> Your data is retained for as long
+              as your account remains active.
+            </li>
+            <li>
+              <strong class="text-noter-text">Account deletion:</strong> When you delete your account,
+              all your notes, personal information, and associated data are permanently deleted within
+              30 days. Encrypted backups that may still contain your data are purged within 90 days.
+            </li>
+            <li>
+              <strong class="text-noter-text">Billing records:</strong> Basic transaction records may be
+              retained for up to 7 years to comply with tax and accounting regulations.
+            </li>
+            <li>
+              <strong class="text-noter-text">Server logs:</strong> Anonymized server logs are retained
+              for up to 90 days for security monitoring and are then automatically deleted.
+            </li>
+          </ul>
+        </section>
+
+        <!-- 7. Your Rights Under GDPR -->
+        <section id="gdpr">
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">7. Your Rights Under GDPR</h2>
+          <p class="mb-4">
+            If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland,
+            you have the following rights under the General Data Protection Regulation (GDPR):
+          </p>
+          <ul class="space-y-3 ml-2">
+            <li class="flex gap-3">
+              <span class="text-noter-accent font-semibold shrink-0">Access</span>
+              <span>You have the right to request a copy of the personal data we hold about you.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-noter-accent font-semibold shrink-0">Rectification</span>
+              <span>You have the right to request correction of inaccurate or incomplete personal data.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-noter-accent font-semibold shrink-0">Erasure</span>
+              <span>You have the right to request deletion of your personal data ("right to be forgotten"). You can delete your account at any time from your settings.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-noter-accent font-semibold shrink-0">Portability</span>
+              <span>You have the right to receive your data in a structured, commonly used, and machine-readable format. NoteGod provides data export functionality in your account settings.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-noter-accent font-semibold shrink-0">Object</span>
+              <span>You have the right to object to the processing of your personal data in certain circumstances, including processing for direct marketing purposes.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-noter-accent font-semibold shrink-0">Restriction</span>
+              <span>You have the right to request restriction of processing of your personal data under certain conditions.</span>
+            </li>
+          </ul>
+          <p class="mt-4">
+            To exercise any of these rights, please contact us at
+            <a href="mailto:support@notegod.io" class="text-noter-accent hover:underline">support@notegod.io</a>.
+            We will respond to your request within 30 days. You also have the right to lodge a complaint
+            with your local data protection authority.
+          </p>
+          <p class="mt-3">
+            <strong class="text-noter-text">Legal basis for processing:</strong> We process your data based on
+            (a) contractual necessity to provide the service, (b) your consent where applicable (e.g., Google Drive
+            integration), and (c) our legitimate interests in maintaining security and improving the service.
+          </p>
+        </section>
+
+        <!-- 8. Children's Privacy -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">8. Children's Privacy</h2>
+          <p>
+            NoteGod is not directed at children under the age of 13. We do not knowingly collect personal
+            information from children under 13. If we become aware that we have collected data from a child
+            under 13 without parental consent, we will take steps to delete that information promptly.
+          </p>
+        </section>
+
+        <!-- 9. International Data Transfers -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">9. International Data Transfers</h2>
+          <p>
+            Your data may be processed and stored in countries outside your country of residence, including
+            the United States. When we transfer data internationally, we ensure appropriate safeguards are
+            in place, including Standard Contractual Clauses approved by the European Commission where
+            applicable.
+          </p>
+        </section>
+
+        <!-- 10. Changes to This Policy -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">10. Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time to reflect changes in our practices or
+            applicable law. We will notify you of any material changes by posting the updated policy on
+            this page and updating the "Last updated" date. For significant changes, we will also notify
+            you via email. Your continued use of NoteGod after changes become effective constitutes your
+            acceptance of the revised policy.
+          </p>
+        </section>
+
+        <!-- 11. Contact Us -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">11. Contact Us</h2>
+          <p>
+            If you have any questions, concerns, or requests regarding this Privacy Policy or our data
+            practices, please contact us at:
+          </p>
+          <div class="mt-4 bg-noter-surface border border-noter-border rounded-lg p-5">
+            <p class="text-noter-text font-medium">NoteGod Privacy Team</p>
+            <p class="mt-1">
+              Email: <a href="mailto:support@notegod.io" class="text-noter-accent hover:underline">support@notegod.io</a>
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

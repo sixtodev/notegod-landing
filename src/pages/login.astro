@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LoginForm from '../components/LoginForm.tsx';
+import '../styles/global.css';
+---
+
+<Layout title="Sign In - NoteGod" description="Sign in to your NoteGod account. Access your encrypted notes from anywhere.">
+  <LoginForm client:load />
+</Layout>

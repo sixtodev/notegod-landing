@@ -1,0 +1,332 @@
+---
+const superpowers = [
+  {
+    id: "pwa",
+    label: "Install as App",
+    accent: "#edff00",
+    title: "Use it like a real app",
+    subtitle: "on any device",
+    description: "NoteGod is a Progressive Web App. Install it on your phone, tablet, or desktop — no app store needed. It looks and feels like a native app.",
+    steps: [
+      { icon: "&#128241;", text: "Open NoteGod in your browser" },
+      { icon: "&#10549;", text: "Tap \"Add to Home Screen\"" },
+      { icon: "&#9989;", text: "Done! It's now an app on your device" },
+    ],
+  },
+  {
+    id: "offline",
+    label: "Works Offline",
+    accent: "#81b29a",
+    title: "No internet?",
+    subtitle: "No problem",
+    description: "Write, edit, and organize your notes even without Wi-Fi. Everything is saved locally and syncs automatically when you reconnect. Perfect for flights, commutes, or anywhere with bad signal.",
+    steps: [
+      { icon: "&#9992;", text: "Go offline — keep working normally" },
+      { icon: "&#9999;", text: "Create, edit, delete notes as usual" },
+      { icon: "&#128259;", text: "Back online? Everything syncs instantly" },
+    ],
+  },
+  {
+    id: "email",
+    label: "Email to Note",
+    accent: "#7eaacc",
+    title: "Forward an email,",
+    subtitle: "get a note",
+    description: "Every project gets a unique email address. Forward any email — receipts, newsletters, confirmations — and it becomes a note automatically. No copy-pasting, no switching apps.",
+    steps: [
+      { icon: "&#128233;", text: "You receive an important email" },
+      { icon: "&#10148;", text: "Forward it to your-project@clip.notegod.io" },
+      { icon: "&#128221;", text: "It appears as a note in that project" },
+    ],
+  },
+  {
+    id: "clipper",
+    label: "Web Clipper",
+    accent: "#b08fd8",
+    title: "Save any webpage",
+    subtitle: "in one click",
+    description: "Found an interesting article, tutorial, or recipe? Click the Web Clipper button in Chrome and save the entire page as a note. It preserves formatting, images, and links.",
+    steps: [
+      { icon: "&#127760;", text: "Browse the web and find something useful" },
+      { icon: "&#128073;", text: "Click the NoteGod extension icon" },
+      { icon: "&#128230;", text: "Choose a project and save — done!" },
+    ],
+  },
+];
+---
+
+<section id="how-it-works" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16 fade-up">
+      <h2 class="uppercase tracking-tight mb-4" style="font-family: var(--font-family-display); font-size: clamp(3rem, 8vw, 5.5rem); line-height: 0.9;">
+        Superpowers<br/><span class="text-noter-accent">most apps hide</span>
+      </h2>
+      <p class="text-noter-text-muted text-lg max-w-2xl mx-auto">
+        These features change how you capture information. Once you try them, you can't go back.
+      </p>
+    </div>
+
+    <!-- Feature cards -->
+    <div class="flex flex-col gap-20 stagger-children">
+      {superpowers.map((sp, index) => (
+        <div class={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center ${index % 2 === 1 ? 'lg:direction-rtl' : ''}`}>
+
+          <!-- Text side -->
+          <div class={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+            <!-- Pill badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-semibold mb-5" style={`border-color: ${sp.accent}40; color: ${sp.accent};`}>
+              <span class="w-1.5 h-1.5 rounded-full" style={`background: ${sp.accent};`}></span>
+              {sp.label}
+            </div>
+
+            <h3 class="text-3xl sm:text-4xl font-bold text-noter-text leading-tight mb-2">
+              {sp.title}<br/>
+              <span style={`color: ${sp.accent};`}>{sp.subtitle}</span>
+            </h3>
+
+            <p class="text-noter-text-muted text-base leading-relaxed mb-6 max-w-lg">
+              {sp.description}
+            </p>
+
+            <!-- Steps -->
+            <div class="flex flex-col gap-3">
+              {sp.steps.map((step, i) => (
+                <div class="flex items-center gap-4 group">
+                  <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0 border transition-colors" style={`border-color: ${sp.accent}25; background: ${sp.accent}08;`}>
+                    <span set:html={step.icon} />
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shrink-0" style={`background: ${sp.accent}20; color: ${sp.accent};`}>
+                      {i + 1}
+                    </span>
+                    <span class="text-sm text-noter-text-muted">{step.text}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Visual side (mockup) -->
+          <div class={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+            {sp.id === 'pwa' && (
+              <!-- Phone mockup -->
+              <div class="flex justify-center">
+                <div class="relative">
+                  <!-- Phone frame -->
+                  <div class="w-[240px] rounded-[2rem] border-2 border-noter-border-light bg-noter-surface p-2 shadow-2xl shadow-black/40">
+                    <!-- Notch -->
+                    <div class="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-5 rounded-full bg-noter-bg z-10"></div>
+                    <!-- Screen -->
+                    <div class="rounded-[1.5rem] bg-noter-bg overflow-hidden">
+                      <!-- Status bar -->
+                      <div class="flex justify-between items-center px-5 pt-7 pb-2">
+                        <span class="text-[10px] text-noter-text-dim">9:41</span>
+                        <div class="flex gap-1">
+                          <span class="text-[10px] text-noter-text-dim">&#9679;&#9679;&#9679;&#9679;</span>
+                        </div>
+                      </div>
+                      <!-- App header -->
+                      <div class="px-4 py-3 flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold text-black" style={`background: ${sp.accent};`}>N</div>
+                        <span class="text-xs font-semibold text-noter-text">My Notes</span>
+                      </div>
+                      <!-- Note items -->
+                      <div class="px-3 space-y-2 pb-6">
+                        <div class="bg-noter-surface rounded-lg p-3 border border-noter-border">
+                          <div class="text-[11px] font-semibold text-noter-text">Shopping List</div>
+                          <div class="text-[9px] text-noter-text-dim mt-1">Groceries for the week...</div>
+                        </div>
+                        <div class="bg-noter-surface rounded-lg p-3 border border-noter-border">
+                          <div class="text-[11px] font-semibold text-noter-text">Trip Ideas ✈️</div>
+                          <div class="text-[9px] text-noter-text-dim mt-1">Places to visit in summer...</div>
+                        </div>
+                        <div class="bg-noter-surface rounded-lg p-3 border border-noter-border">
+                          <div class="text-[11px] font-semibold text-noter-text">Book Notes 📚</div>
+                          <div class="text-[9px] text-noter-text-dim mt-1">Key takeaways from ch. 3...</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Floating "installed" badge -->
+                  <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full text-[11px] font-semibold text-black whitespace-nowrap shadow-lg" style={`background: ${sp.accent};`}>
+                    ✓ Installed as App
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {sp.id === 'offline' && (
+              <!-- Offline/Online visual -->
+              <div class="flex justify-center">
+                <div class="w-full max-w-[340px] space-y-4">
+                  <!-- Offline state -->
+                  <div class="bg-noter-surface border border-noter-border rounded-xl p-4 relative">
+                    <div class="absolute -top-3 left-4 px-2 py-0.5 rounded-full text-[10px] font-bold bg-noter-red/20 text-noter-red border border-noter-red/30">
+                      ✕ OFFLINE
+                    </div>
+                    <div class="mt-2 space-y-2">
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px]">✏️</span>
+                        <div class="h-2 bg-noter-border/50 rounded-full flex-1"></div>
+                        <span class="text-[9px] text-noter-text-dim">editing...</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px]">📝</span>
+                        <div class="h-2 bg-noter-border/50 rounded-full flex-1"></div>
+                        <span class="text-[9px] text-noter-text-dim">saved locally</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px]">📋</span>
+                        <div class="h-2 bg-noter-border/50 rounded-full flex-1"></div>
+                        <span class="text-[9px] text-noter-text-dim">saved locally</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Arrow -->
+                  <div class="flex justify-center">
+                    <div class="flex flex-col items-center gap-1">
+                      <div class="w-px h-4" style={`background: ${sp.accent}50;`}></div>
+                      <span class="text-xs" style={`color: ${sp.accent};`}>Wi-Fi reconnects</span>
+                      <div class="w-px h-4" style={`background: ${sp.accent}50;`}></div>
+                      <span style={`color: ${sp.accent};`}>&#9660;</span>
+                    </div>
+                  </div>
+                  <!-- Online state -->
+                  <div class="bg-noter-surface border rounded-xl p-4 relative" style={`border-color: ${sp.accent}40;`}>
+                    <div class="absolute -top-3 left-4 px-2 py-0.5 rounded-full text-[10px] font-bold border" style={`background: ${sp.accent}20; color: ${sp.accent}; border-color: ${sp.accent}40;`}>
+                      ✓ ONLINE — SYNCED
+                    </div>
+                    <div class="mt-2 space-y-2">
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px]">✅</span>
+                        <div class="h-2 rounded-full flex-1" style={`background: ${sp.accent}20;`}></div>
+                        <span class="text-[9px]" style={`color: ${sp.accent};`}>synced ✓</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px]">✅</span>
+                        <div class="h-2 rounded-full flex-1" style={`background: ${sp.accent}20;`}></div>
+                        <span class="text-[9px]" style={`color: ${sp.accent};`}>synced ✓</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[10px]">✅</span>
+                        <div class="h-2 rounded-full flex-1" style={`background: ${sp.accent}20;`}></div>
+                        <span class="text-[9px]" style={`color: ${sp.accent};`}>synced ✓</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {sp.id === 'email' && (
+              <!-- Email to Note flow -->
+              <div class="flex justify-center">
+                <div class="w-full max-w-[340px] space-y-4">
+                  <!-- Email -->
+                  <div class="bg-noter-surface border border-noter-border rounded-xl p-4">
+                    <div class="flex items-center gap-3 mb-3">
+                      <div class="w-8 h-8 rounded-full bg-noter-blue/20 flex items-center justify-center text-sm">&#128233;</div>
+                      <div>
+                        <div class="text-[11px] font-semibold text-noter-text">Flight Confirmation</div>
+                        <div class="text-[9px] text-noter-text-dim">from: airline@flights.com</div>
+                      </div>
+                    </div>
+                    <div class="space-y-1.5 ml-11">
+                      <div class="h-2 bg-noter-border/40 rounded-full w-full"></div>
+                      <div class="h-2 bg-noter-border/40 rounded-full w-3/4"></div>
+                      <div class="text-[9px] text-noter-text-dim mt-2">Booking #NTG-4829 • March 15</div>
+                    </div>
+                  </div>
+                  <!-- Forward arrow -->
+                  <div class="flex justify-center">
+                    <div class="flex flex-col items-center gap-1">
+                      <span class="text-[10px] font-semibold px-3 py-1 rounded-full border" style={`color: ${sp.accent}; border-color: ${sp.accent}40; background: ${sp.accent}10;`}>
+                        Forward to travel@clip.notegod.io
+                      </span>
+                      <span style={`color: ${sp.accent};`}>&#9660;</span>
+                    </div>
+                  </div>
+                  <!-- Note result -->
+                  <div class="bg-noter-surface border rounded-xl p-4 relative" style={`border-color: ${sp.accent}40;`}>
+                    <div class="absolute -top-3 right-4 px-2 py-0.5 rounded-full text-[10px] font-bold" style={`background: ${sp.accent}20; color: ${sp.accent};`}>
+                      &#128221; New Note
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-xs">&#128193;</span>
+                      <span class="text-[10px] font-semibold" style={`color: ${sp.accent};`}>Travel</span>
+                    </div>
+                    <div class="text-[11px] font-semibold text-noter-text">Flight Confirmation</div>
+                    <div class="mt-2 space-y-1.5">
+                      <div class="h-2 bg-noter-border/40 rounded-full w-full"></div>
+                      <div class="h-2 bg-noter-border/40 rounded-full w-3/4"></div>
+                      <div class="text-[9px] text-noter-text-dim mt-2">Booking #NTG-4829 • March 15</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {sp.id === 'clipper' && (
+              <!-- Web Clipper visual -->
+              <div class="flex justify-center">
+                <div class="w-full max-w-[380px]">
+                  <!-- Browser window -->
+                  <div class="bg-noter-surface border border-noter-border rounded-xl overflow-hidden shadow-xl shadow-black/30">
+                    <!-- Browser chrome -->
+                    <div class="flex items-center gap-2 px-3 py-2 border-b border-noter-border bg-noter-surface-hover">
+                      <span class="w-2.5 h-2.5 rounded-full bg-noter-red/50"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-noter-yellow/50"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-noter-green/50"></span>
+                      <div class="flex-1 mx-2 bg-noter-bg rounded-md px-3 py-1 flex items-center gap-2">
+                        <span class="text-[9px] text-noter-text-dim">&#128274;</span>
+                        <span class="text-[10px] text-noter-text-dim">blog.example.com/10-tips-for...</span>
+                      </div>
+                      <!-- Extension icon -->
+                      <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold text-black cursor-pointer relative" style={`background: ${sp.accent};`}>
+                        N
+                        <!-- Click indicator -->
+                        <div class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-noter-red flex items-center justify-center">
+                          <span class="text-[7px] text-white font-bold">&#10149;</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Page content -->
+                    <div class="p-4 relative">
+                      <div class="text-xs font-bold text-noter-text mb-2">10 Tips for Better Productivity</div>
+                      <div class="space-y-1.5">
+                        <div class="h-2 bg-noter-border/40 rounded-full w-full"></div>
+                        <div class="h-2 bg-noter-border/40 rounded-full w-5/6"></div>
+                        <div class="h-2 bg-noter-border/40 rounded-full w-11/12"></div>
+                        <div class="h-8 bg-noter-border/20 rounded-lg w-full mt-2"></div>
+                        <div class="h-2 bg-noter-border/40 rounded-full w-4/5"></div>
+                      </div>
+                      <!-- Clipper popup overlay -->
+                      <div class="absolute top-2 right-2 w-40 bg-noter-bg border rounded-lg p-3 shadow-xl" style={`border-color: ${sp.accent}40;`}>
+                        <div class="text-[10px] font-bold mb-2" style={`color: ${sp.accent};`}>Save to NoteGod</div>
+                        <div class="space-y-1.5">
+                          <div class="flex items-center gap-1.5 text-[9px] text-noter-text-muted bg-noter-surface rounded px-2 py-1">
+                            <span>&#128193;</span> Work
+                          </div>
+                          <div class="flex items-center gap-1.5 text-[9px] text-noter-text bg-noter-surface-active rounded px-2 py-1 border" style={`border-color: ${sp.accent}40;`}>
+                            <span>&#128193;</span> Research
+                          </div>
+                          <div class="flex items-center gap-1.5 text-[9px] text-noter-text-muted bg-noter-surface rounded px-2 py-1">
+                            <span>&#128193;</span> Personal
+                          </div>
+                        </div>
+                        <button class="w-full mt-2 py-1 rounded text-[10px] font-bold text-black" style={`background: ${sp.accent};`}>
+                          Clip Page
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

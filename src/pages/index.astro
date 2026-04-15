@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Features from '../components/Features.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Comparison from '../components/Comparison.astro';
+import PricingSection from '../components/PricingSection.tsx';
+import Security from '../components/Security.astro';
+import UseCases from '../components/UseCases.astro';
+import FAQ from '../components/FAQ.tsx';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <Hero />
+    <TrustBar />
+    <Features />
+    <HowItWorks />
+    <Comparison />
+    <PricingSection client:visible />
+    <Security />
+    <UseCases />
+    <FAQ client:visible />
+    <CTA />
+  </main>
+  <Footer />
+</Layout>

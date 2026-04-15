@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RegisterForm from '../components/RegisterForm.tsx';
+import '../styles/global.css';
+---
+
+<Layout title="Create Account - NoteGod" description="Create your free NoteGod account. Start organizing your notes with AES-256 encryption and offline mode.">
+  <RegisterForm client:load />
+</Layout>

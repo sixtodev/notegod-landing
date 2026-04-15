@@ -1,0 +1,44 @@
+---
+---
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden">
+  <div class="mx-auto max-w-4xl p-4">
+    <div class="rounded-xl border border-noter-border bg-noter-surface/95 backdrop-blur-md p-4 sm:p-6 shadow-2xl">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex-1">
+          <p class="text-sm text-noter-text-dim">
+            We use essential cookies for authentication and app functionality. No tracking or advertising cookies are used.
+            <a href="/privacy" class="text-noter-accent hover:underline ml-1">Privacy Policy</a>
+          </p>
+        </div>
+        <div class="flex gap-3 shrink-0">
+          <button id="cookie-reject" class="px-4 py-2 text-sm rounded-lg border border-noter-border text-noter-text-dim hover:bg-noter-border/30 transition-colors">
+            Reject non-essential
+          </button>
+          <button id="cookie-accept" class="px-4 py-2 text-sm rounded-lg bg-noter-accent text-black font-medium hover:bg-noter-accent/90 transition-colors">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const consent = localStorage.getItem('cookie-consent');
+
+  if (!consent && banner) {
+    banner.classList.remove('hidden');
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    banner?.classList.add('hidden');
+  });
+
+  document.getElementById('cookie-reject')?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'rejected');
+    banner?.classList.add('hidden');
+  });
+</script>

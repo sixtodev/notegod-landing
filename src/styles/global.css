@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@theme {
+  --color-noter-bg: #242426;
+  --color-noter-surface: #2c2c2e;
+  --color-noter-surface-hover: #333336;
+  --color-noter-surface-active: #3a3a3d;
+  --color-noter-border: #3c3c3f;
+  --color-noter-border-light: #47474a;
+  --color-noter-text: #f3f0eb;
+  --color-noter-text-muted: #c9c7c4;
+  --color-noter-text-dim: #aeacab;
+  --color-noter-accent: #edff00;
+  --color-noter-accent-dark: #b8d900;
+  --color-noter-green: #81b29a;
+  --color-noter-blue: #7eaacc;
+  --color-noter-purple: #b08fd8;
+  --color-noter-yellow: #d4a84b;
+  --color-noter-red: #ef4444;
+
+  --font-family-display: 'Morganite', Impact, 'Arial Narrow', sans-serif;
+  --font-family-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-noter-bg);
+  color: var(--color-noter-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(237, 255, 0, 0.25);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-noter-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-noter-border-light);
+  border-radius: 3px;
+}
+
+/* Fade-in animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-children.visible > * { opacity: 1; transform: none; }
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.06s; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.06s; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.12s; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.12s; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.18s; }
+.stagger-children.visible > *:nth-child(7) { transition-delay: 0.18s; }
+.stagger-children.visible > *:nth-child(8) { transition-delay: 0.24s; }
+.stagger-children.visible > *:nth-child(n+9) { transition-delay: 0.3s; }

@@ -1,0 +1,102 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16">
+  <!-- Background glow -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-[0.06]" style="background: radial-gradient(circle, #edff00 0%, transparent 70%);"></div>
+
+  <div class="max-w-6xl mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+    <!-- Text -->
+    <div class="fade-up">
+      <h1 class="font-[var(--font-family-display)] uppercase leading-[0.85] tracking-tight mb-6" style="font-family: var(--font-family-display); font-size: clamp(4rem, 12vw, 10rem);">
+        Your ideas,<br/>
+        <span class="text-noter-accent">organized.</span><br/>
+        Secured.<br/>
+        <span class="text-noter-text-muted" style="font-size: 0.7em;">Everywhere.</span>
+      </h1>
+      <p class="text-noter-text-muted text-lg max-w-xl mb-8 leading-relaxed">
+        The most affordable note-taking app with premium features. Built for students, freelancers, and small teams.
+      </p>
+      <div class="flex flex-wrap gap-4 mb-4">
+        <a href="/register" class="inline-flex items-center px-8 py-4 font-semibold text-black rounded-xl text-base transition-all hover:brightness-110 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #edff00, #b8d900);">
+          Start Free
+        </a>
+        <a href="#pricing" class="inline-flex items-center px-8 py-4 font-semibold text-noter-text border border-noter-border-light rounded-xl text-base hover:border-noter-text-dim transition-all">
+          See Pricing
+        </a>
+      </div>
+      <p class="text-noter-text-dim text-sm flex items-center gap-1.5">
+        <span class="text-noter-green">&#10003;</span> No credit card required
+      </p>
+    </div>
+
+    <!-- Editor mockup -->
+    <div class="fade-up hidden sm:block">
+      <div class="bg-noter-surface border border-noter-border rounded-2xl overflow-hidden shadow-2xl shadow-black/30 relative">
+        <!-- Window controls -->
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-noter-border bg-noter-surface-hover">
+          <span class="w-3 h-3 rounded-full bg-noter-red/60"></span>
+          <span class="w-3 h-3 rounded-full bg-noter-yellow/60"></span>
+          <span class="w-3 h-3 rounded-full bg-noter-green/60"></span>
+          <span class="ml-4 text-xs text-noter-text-dim">NoteGod Editor</span>
+        </div>
+        <div class="flex" style="height: 320px;">
+          <!-- Sidebar -->
+          <div class="w-44 border-r border-noter-border bg-noter-surface-hover p-3 hidden md:flex flex-col gap-1">
+            <div class="text-xs text-noter-text-dim uppercase tracking-wider mb-2 font-semibold">Projects</div>
+            <div class="flex items-center gap-2 px-2 py-1.5 rounded bg-noter-accent/10 text-xs text-noter-accent">
+              <span>&#9733;</span> My Notes
+            </div>
+            <div class="flex items-center gap-2 px-2 py-1.5 rounded text-xs text-noter-text-muted hover:bg-noter-surface-active">
+              <span>&#128218;</span> School
+            </div>
+            <div class="flex items-center gap-2 px-2 py-1.5 rounded text-xs text-noter-text-muted">
+              <span>&#128188;</span> Work
+            </div>
+            <div class="mt-auto">
+              <div class="flex items-center gap-2 px-2 py-1.5 rounded text-xs text-noter-text-dim">
+                <span>&#128274;</span> Encrypted
+              </div>
+            </div>
+          </div>
+          <!-- Note list -->
+          <div class="w-48 border-r border-noter-border p-3 hidden lg:flex flex-col gap-1">
+            <div class="px-2 py-2 rounded-lg bg-noter-surface-active border border-noter-border-light">
+              <div class="text-xs font-semibold text-noter-text truncate">Project Roadmap</div>
+              <div class="text-[10px] text-noter-text-dim mt-1">Just now</div>
+            </div>
+            <div class="px-2 py-2 rounded-lg">
+              <div class="text-xs text-noter-text-muted truncate">Meeting Notes</div>
+              <div class="text-[10px] text-noter-text-dim mt-1">2 hours ago</div>
+            </div>
+            <div class="px-2 py-2 rounded-lg">
+              <div class="text-xs text-noter-text-muted truncate">Research Links</div>
+              <div class="text-[10px] text-noter-text-dim mt-1">Yesterday</div>
+            </div>
+          </div>
+          <!-- Editor area -->
+          <div class="flex-1 p-5 overflow-hidden">
+            <div class="text-base font-semibold text-noter-text mb-3">Project Roadmap</div>
+            <div class="space-y-2.5">
+              <div class="h-2.5 bg-noter-border/50 rounded-full w-full"></div>
+              <div class="h-2.5 bg-noter-border/50 rounded-full w-4/5"></div>
+              <div class="h-2.5 bg-noter-border/50 rounded-full w-11/12"></div>
+              <div class="mt-4 flex items-center gap-2 text-xs text-noter-text-muted">
+                <span class="text-noter-green">&#9745;</span> Define MVP features
+              </div>
+              <div class="flex items-center gap-2 text-xs text-noter-text-muted">
+                <span class="text-noter-green">&#9745;</span> Set up database
+              </div>
+              <div class="flex items-center gap-2 text-xs text-noter-text-muted">
+                <span class="text-noter-text-dim">&#9744;</span> Launch beta
+              </div>
+              <div class="mt-4 h-16 rounded-lg bg-noter-surface-hover border border-noter-border flex items-center justify-center">
+                <span class="text-xs text-noter-text-dim">image.png</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

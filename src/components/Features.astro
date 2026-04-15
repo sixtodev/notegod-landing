@@ -1,0 +1,45 @@
+---
+const features = [
+  { icon: "&#9998;", title: "Rich Text Editor", desc: "WYSIWYG editor with formatting, images, tables, code blocks, and task lists. No Markdown knowledge needed." },
+  { icon: "&#128737;", title: "AES-256 Encryption", desc: "Your notes are encrypted end-to-end. Not even we can read them." },
+  { icon: "&#9889;", title: "Offline Mode", desc: "Works without internet. Syncs automatically when you're back online." },
+  { icon: "&#128269;", title: "Smart Folders", desc: "Save custom filter combinations as virtual folders. Find anything instantly." },
+  { icon: "&#128193;", title: "Nested Folders", desc: "Organize with unlimited folder depth. Your structure, your rules." },
+  { icon: "&#9729;", title: "Google Drive", desc: "Embed and preview Drive files directly inside your notes." },
+  { icon: "&#9993;", title: "Email to Note", desc: "Forward any email to your unique address. It becomes a note automatically." },
+  { icon: "&#127760;", title: "Web Clipper", desc: "Save any web page as a note with our Chrome extension." },
+  { icon: "&#128172;", title: "Note Comments", desc: "Discuss notes with threaded conversations. Perfect for team feedback." },
+  { icon: "&#128336;", title: "Activity Feed", desc: "See who changed what and when. Full project timeline." },
+  { icon: "&#128279;", title: "Public Sharing", desc: "Share notes via link with optional password protection and expiry dates." },
+  { icon: "&#127912;", title: "Custom Branding", desc: "Personalize shared pages with your name, colors, and logo." },
+  { icon: "&#128101;", title: "Viewer Role", desc: "Share projects as read-only. Control who can edit and who can view." },
+  { icon: "&#128260;", title: "Version History", desc: "Never lose a change. Restore any previous version of your notes." },
+  { icon: "&#128196;", title: "Custom Templates", desc: "Create reusable templates for common note types." },
+  { icon: "&#127991;", title: "Tags & Filters", desc: "Color-coded tags with advanced filtering and search operators." },
+];
+---
+
+<section id="features" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 class="uppercase tracking-tight mb-4" style="font-family: var(--font-family-display); font-size: clamp(3rem, 8vw, 5.5rem); line-height: 0.9;">
+        Everything you need,<br/><span class="text-noter-accent">nothing you don't</span>
+      </h2>
+      <p class="text-noter-text-muted text-lg max-w-2xl mx-auto">
+        A complete toolkit for capturing, organizing, and sharing your ideas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 stagger-children">
+      {features.map((f) => (
+        <div class="bg-noter-surface border border-noter-border rounded-xl p-5 hover:border-noter-accent/30 hover:-translate-y-1 group" style="transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+          <div class="w-10 h-10 rounded-full bg-noter-accent/10 flex items-center justify-center text-noter-accent text-lg mb-3">
+            <span set:html={f.icon} />
+          </div>
+          <h3 class="font-semibold text-sm text-noter-text">{f.title}</h3>
+          <p class="text-xs text-noter-text-muted mt-1 leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
