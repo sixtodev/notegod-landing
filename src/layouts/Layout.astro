@@ -5,16 +5,20 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "NoteGod - Secure Note-Taking for Students, Freelancers & Teams",
   description = "The most affordable note-taking app with AES-256 encryption, offline mode, Google Drive integration, Web Clipper, and team collaboration. Free forever plan available.",
   canonical = "https://notegod.io",
+  noindex = false,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const fullUrl = `https://notegod.io${currentPath === '/' ? '' : currentPath}`;
+const authPages = ['/login', '/register', '/forgot-password', '/reset-password'];
+const shouldNoindex = noindex || authPages.some(p => currentPath.startsWith(p));
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -51,16 +55,11 @@ const productSchema = {
     {
       "@type": "Offer",
       "name": "Team",
-      "price": "4.99",
+      "price": "3.99",
       "priceCurrency": "USD",
       "billingIncrement": "P1M"
     }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "120"
-  }
+  ]
 };
 
 const faqSchema = {
@@ -83,6 +82,8 @@ const faqSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#1a1a1c" />
     <meta name="keywords" content="note taking app, secure notes, encrypted notes, notes for students, team notes, offline notes, WYSIWYG editor, cheap note app, Notion alternative, Obsidian alternative, Evernote alternative, Joplin alternative, notas seguras, aplicacion de notas" />
     <meta name="author" content="NoteGod" />
     <link rel="canonical" href={fullUrl} />

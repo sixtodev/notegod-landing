@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /login
 Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
 
-Sitemap: https://notegod.app/sitemap-index.xml
+Sitemap: https://notegod.io/sitemap-index.xml

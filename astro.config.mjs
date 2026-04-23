@@ -5,7 +5,15 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://notegod.io',
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) =>
+        !['/login', '/register', '/forgot-password', '/reset-password'].some((p) =>
+          page.includes(p)
+        ),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

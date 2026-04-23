@@ -146,7 +146,7 @@ export default function LoginForm() {
               style={inputStyle}
             />
             <div style={{ textAlign: 'right', marginTop: '8px' }}>
-              <a href="#" style={{ color: '#edff00', fontSize: '12px', textDecoration: 'none' }}>Forgot password?</a>
+              <a href="/forgot-password" style={{ color: '#edff00', fontSize: '12px', textDecoration: 'none' }}>Forgot password?</a>
             </div>
           </div>
 

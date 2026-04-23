@@ -45,8 +45,8 @@ const plans = [
   },
   {
     name: 'NoteGod Team',
-    priceMonthly: 4.99,
-    priceYearly: 39.99,
+    priceMonthly: 3.99,
+    priceYearly: 36.00,
     badge: 'Transparent Pricing',
     features: [
       'Everything in Pro, plus:',
@@ -154,7 +154,7 @@ export default function PricingSection() {
               borderRadius: '999px',
             }}
           >
-            Save 33%
+            Save up to 33%
           </span>
         )}
       </div>
@@ -343,7 +343,7 @@ export default function PricingSection() {
                           style={{ fontSize: '11px', color: '#edff00', cursor: 'pointer', fontWeight: 600 }}
                           onClick={() => setYearly(true)}
                         >
-                          Save 33% →
+                          Save up to 33% →
                         </span>
                       </div>
                     )}
