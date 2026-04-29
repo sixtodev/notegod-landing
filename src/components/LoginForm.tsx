@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import PasswordInput from './PasswordInput';
 
 const supabase = createClient(
   import.meta.env.PUBLIC_SUPABASE_URL,
@@ -51,11 +52,15 @@ export default function LoginForm() {
   return (
     <div style={{ minHeight: '100vh', background: '#242426', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
       <div style={{ width: '100%', maxWidth: '420px', background: '#2c2c2e', border: '1px solid #3c3c3f', borderRadius: '16px', padding: '40px' }}>
-        {/* Logo */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px' }}>
+        {/* Logo — clicks back to landing */}
+        <a
+          href="/"
+          aria-label="Back to home"
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px', textDecoration: 'none' }}
+        >
           <img src="/notegod.png" alt="NoteGod" width="36" height="36" />
           <span style={{ color: '#edff00', fontWeight: 700, fontSize: '20px', letterSpacing: '-0.02em' }}>NoteGod</span>
-        </div>
+        </a>
         <p style={{ textAlign: 'center', color: '#aeacab', fontSize: '14px', marginBottom: '32px' }}>Welcome back</p>
 
         {/* Social login */}
@@ -136,14 +141,13 @@ export default function LoginForm() {
             style={inputStyle}
           />
           <div>
-            <input
+            <PasswordInput
               id="login-password"
-              type="password"
               required
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={inputStyle}
+              onChange={setPassword}
+              autoComplete="current-password"
             />
             <div style={{ textAlign: 'right', marginTop: '8px' }}>
               <a href="/forgot-password" style={{ color: '#edff00', fontSize: '12px', textDecoration: 'none' }}>Forgot password?</a>

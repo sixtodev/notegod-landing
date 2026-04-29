@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import PasswordInput from './PasswordInput';
 
 const supabase = createClient(
   import.meta.env.PUBLIC_SUPABASE_URL,
@@ -78,11 +79,15 @@ export default function RegisterForm() {
   return (
     <div style={{ minHeight: '100vh', background: '#242426', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
       <div style={{ width: '100%', maxWidth: '420px', background: '#2c2c2e', border: '1px solid #3c3c3f', borderRadius: '16px', padding: '40px' }}>
-        {/* Logo */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px' }}>
+        {/* Logo — clicks back to landing */}
+        <a
+          href="/"
+          aria-label="Back to home"
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px', textDecoration: 'none' }}
+        >
           <img src="/notegod.png" alt="NoteGod" width="36" height="36" />
           <span style={{ color: '#edff00', fontWeight: 700, fontSize: '20px', letterSpacing: '-0.02em' }}>NoteGod</span>
-        </div>
+        </a>
         <p style={{ textAlign: 'center', color: '#aeacab', fontSize: '14px', marginBottom: '32px' }}>Create your account</p>
 
         {/* Social login */}
@@ -173,15 +178,14 @@ export default function RegisterForm() {
             style={inputStyle}
           />
           <div>
-            <input
+            <PasswordInput
               id="register-password"
-              type="password"
               required
               minLength={8}
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={inputStyle}
+              onChange={setPassword}
+              autoComplete="new-password"
             />
             <p style={{ color: '#aeacab', fontSize: '11px', marginTop: '6px' }}>Password must be at least 8 characters</p>
           </div>
