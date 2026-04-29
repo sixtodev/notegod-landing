@@ -27,19 +27,6 @@ const superpowers = [
     ],
   },
   {
-    id: "email",
-    label: "Email to Note",
-    accent: "#7eaacc",
-    title: "Forward an email,",
-    subtitle: "get a note",
-    description: "Every project gets a unique email address. Forward any email — receipts, newsletters, confirmations — and it becomes a note automatically. No copy-pasting, no switching apps.",
-    steps: [
-      { icon: "&#128233;", text: "You receive an important email" },
-      { icon: "&#10148;", text: "Forward it to your-project@clip.notegod.io" },
-      { icon: "&#128221;", text: "It appears as a note in that project" },
-    ],
-  },
-  {
     id: "clipper",
     label: "Web Clipper",
     accent: "#b08fd8",
@@ -219,53 +206,6 @@ const superpowers = [
               </div>
             )}
 
-            {sp.id === 'email' && (
-              <!-- Email to Note flow -->
-              <div class="flex justify-center">
-                <div class="w-full max-w-[340px] space-y-4">
-                  <!-- Email -->
-                  <div class="bg-noter-surface border border-noter-border rounded-xl p-4">
-                    <div class="flex items-center gap-3 mb-3">
-                      <div class="w-8 h-8 rounded-full bg-noter-blue/20 flex items-center justify-center text-sm">&#128233;</div>
-                      <div>
-                        <div class="text-[11px] font-semibold text-noter-text">Flight Confirmation</div>
-                        <div class="text-[9px] text-noter-text-dim">from: airline@flights.com</div>
-                      </div>
-                    </div>
-                    <div class="space-y-1.5 ml-11">
-                      <div class="h-2 bg-noter-border/40 rounded-full w-full"></div>
-                      <div class="h-2 bg-noter-border/40 rounded-full w-3/4"></div>
-                      <div class="text-[9px] text-noter-text-dim mt-2">Booking #NTG-4829 • March 15</div>
-                    </div>
-                  </div>
-                  <!-- Forward arrow -->
-                  <div class="flex justify-center">
-                    <div class="flex flex-col items-center gap-1">
-                      <span class="text-[10px] font-semibold px-3 py-1 rounded-full border" style={`color: ${sp.accent}; border-color: ${sp.accent}40; background: ${sp.accent}10;`}>
-                        Forward to travel@clip.notegod.io
-                      </span>
-                      <span style={`color: ${sp.accent};`}>&#9660;</span>
-                    </div>
-                  </div>
-                  <!-- Note result -->
-                  <div class="bg-noter-surface border rounded-xl p-4 relative" style={`border-color: ${sp.accent}40;`}>
-                    <div class="absolute -top-3 right-4 px-2 py-0.5 rounded-full text-[10px] font-bold" style={`background: ${sp.accent}20; color: ${sp.accent};`}>
-                      &#128221; New Note
-                    </div>
-                    <div class="flex items-center gap-2 mb-2">
-                      <span class="text-xs">&#128193;</span>
-                      <span class="text-[10px] font-semibold" style={`color: ${sp.accent};`}>Travel</span>
-                    </div>
-                    <div class="text-[11px] font-semibold text-noter-text">Flight Confirmation</div>
-                    <div class="mt-2 space-y-1.5">
-                      <div class="h-2 bg-noter-border/40 rounded-full w-full"></div>
-                      <div class="h-2 bg-noter-border/40 rounded-full w-3/4"></div>
-                      <div class="text-[9px] text-noter-text-dim mt-2">Booking #NTG-4829 • March 15</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
 
             {sp.id === 'clipper' && (
               <!-- Web Clipper visual -->
