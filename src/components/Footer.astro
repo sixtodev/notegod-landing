@@ -14,20 +14,21 @@ const legalLinks = [
 ---
 
 <footer class="bg-noter-surface border-t border-noter-border">
-  <div class="max-w-6xl mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
+  <div class="max-w-6xl mx-auto px-6 py-12 sm:py-14">
+    <!-- Top: Brand spans wider on the left, link columns hug the right -->
+    <div class="grid grid-cols-1 sm:grid-cols-12 gap-8">
       <!-- Brand -->
-      <div>
+      <div class="sm:col-span-6 lg:col-span-7">
         <div class="flex items-center gap-2 mb-3">
           <img src="/notegod.png" alt="NoteGod" width="28" height="28" />
           <span class="text-noter-accent font-bold tracking-tight">NoteGod</span>
         </div>
-        <p class="text-noter-text-dim text-xs leading-relaxed mb-3">Secure notes for everyone. Encrypt, organize, and share your ideas.</p>
+        <p class="text-noter-text-dim text-xs leading-relaxed mb-3 max-w-sm">Secure notes for everyone. Encrypt, organize, and share your ideas.</p>
         <a href="mailto:support@notegod.io" class="text-noter-text-dim text-xs hover:text-noter-accent transition-colors">support@notegod.io</a>
       </div>
 
       <!-- Product -->
-      <div>
+      <div class="sm:col-span-3 lg:col-span-2">
         <h4 class="text-xs font-semibold uppercase tracking-wider text-noter-text-muted mb-4">Product</h4>
         <ul class="flex flex-col gap-2">
           {productLinks.map((link) => (
@@ -39,7 +40,7 @@ const legalLinks = [
       </div>
 
       <!-- Legal -->
-      <div>
+      <div class="sm:col-span-3 lg:col-span-3">
         <h4 class="text-xs font-semibold uppercase tracking-wider text-noter-text-muted mb-4">Legal</h4>
         <ul class="flex flex-col gap-2">
           {legalLinks.map((link) => (
@@ -51,14 +52,9 @@ const legalLinks = [
       </div>
     </div>
 
-    <!-- Bottom -->
-    <div class="mt-12 pt-6 border-t border-noter-border flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-noter-text-dim text-xs">2026 NoteGod. All rights reserved.</p>
-      <div class="flex items-center gap-6">
-        <a href="#" class="text-noter-text-dim text-xs hover:text-noter-accent transition-colors">Twitter/X</a>
-        <a href="#" class="text-noter-text-dim text-xs hover:text-noter-accent transition-colors">GitHub</a>
-        <a href="#" class="text-noter-text-dim text-xs hover:text-noter-accent transition-colors">Discord</a>
-      </div>
+    <!-- Bottom: just copyright centered -->
+    <div class="mt-10 pt-6 border-t border-noter-border text-center">
+      <p class="text-noter-text-dim text-xs">© 2026 NoteGod</p>
     </div>
   </div>
 </footer>
