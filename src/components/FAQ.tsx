@@ -27,7 +27,11 @@ const faqs = [
   },
   {
     q: "What is the Web Clipper?",
-    a: "A Chrome extension (included with Pro and Team) that lets you save any web page as a note. Pick between full page, selected text, or simplified (article-only) modes.",
+    a: "A bookmarklet (included with Pro and Team) that you drag into your browser's bookmarks bar once. Then on any web page, one click saves it as a note in NoteGod. No extension to install — works on Chrome, Firefox, Safari, and Brave. You can also select text on a page first to clip just that excerpt.",
+  },
+  {
+    q: "Does NoteGod support journaling?",
+    a: "Yes. The \"Today\" shortcut in the sidebar creates a fresh daily note in one click and pre-fills it with your journaling template. Perfect for daily logs, gratitude lists, standups, or any recurring writing habit.",
   },
   {
     q: "Is my data encrypted?",
