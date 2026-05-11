@@ -17,8 +17,7 @@ const {
 
 const currentPath = Astro.url.pathname;
 const fullUrl = `https://notegod.io${currentPath === '/' ? '' : currentPath}`;
-const authPages = ['/login', '/register', '/forgot-password', '/reset-password'];
-const shouldNoindex = noindex || authPages.some(p => currentPath.startsWith(p));
+const shouldNoindex = noindex;
 
 const organizationSchema = {
   "@context": "https://schema.org",

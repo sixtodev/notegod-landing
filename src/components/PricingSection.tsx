@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const APP_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.notegod.io';
+
 const plans = [
   {
     name: 'NoteGod Free',
@@ -362,7 +364,7 @@ export default function PricingSection() {
               )}
 
               <a
-                href="/register"
+                href={`${APP_URL}/register`}
                 style={{
                   display: 'block',
                   textAlign: 'center',

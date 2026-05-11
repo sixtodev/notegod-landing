@@ -1,4 +1,5 @@
 ---
+const APP_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.notegod.io';
 ---
 
 <section class="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16">
@@ -18,7 +19,7 @@
         The most affordable note-taking app with premium features. Built for students, freelancers, and small teams.
       </p>
       <div class="flex flex-wrap gap-4 mb-4">
-        <a href="/register" class="inline-flex items-center px-8 py-4 font-semibold text-black rounded-xl text-base transition-all hover:brightness-110 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #edff00, #b8d900);">
+        <a href={`${APP_URL}/register`} class="inline-flex items-center px-8 py-4 font-semibold text-black rounded-xl text-base transition-all hover:brightness-110 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #edff00, #b8d900);">
           Start Free
         </a>
         <a href="#pricing" class="inline-flex items-center px-8 py-4 font-semibold text-noter-text border border-noter-border-light rounded-xl text-base hover:border-noter-text-dim transition-all">

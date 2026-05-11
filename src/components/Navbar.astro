@@ -1,4 +1,7 @@
 ---
+const APP_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.notegod.io';
+const loginHref = `${APP_URL}/login`;
+const registerHref = `${APP_URL}/register`;
 ---
 
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 border-b border-noter-border/50 transition-all duration-300" style="background: rgba(36,36,38,0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
@@ -19,10 +22,10 @@
 
     <!-- Desktop buttons -->
     <div class="hidden md:flex items-center gap-3">
-      <a href="/login" class="px-4 py-2 text-sm text-noter-text border border-noter-border-light rounded-lg hover:border-noter-text-dim transition-colors">
+      <a href={loginHref} class="px-4 py-2 text-sm text-noter-text border border-noter-border-light rounded-lg hover:border-noter-text-dim transition-colors">
         Login
       </a>
-      <a href="/register" class="px-4 py-2 text-sm font-semibold bg-noter-accent text-black rounded-lg hover:brightness-110 transition-all">
+      <a href={registerHref} class="px-4 py-2 text-sm font-semibold bg-noter-accent text-black rounded-lg hover:brightness-110 transition-all">
         Get Started Free
       </a>
     </div>
@@ -45,8 +48,8 @@
       <a href="/#security" class="text-sm text-noter-text-muted hover:text-noter-text py-2">Security</a>
       <a href="/#faq" class="text-sm text-noter-text-muted hover:text-noter-text py-2">FAQ</a>
       <hr class="border-noter-border" />
-      <a href="/login" class="text-sm text-noter-text py-2">Login</a>
-      <a href="/register" class="w-full text-center px-4 py-2 text-sm font-semibold bg-noter-accent text-black rounded-lg">
+      <a href={loginHref} class="text-sm text-noter-text py-2">Login</a>
+      <a href={registerHref} class="w-full text-center px-4 py-2 text-sm font-semibold bg-noter-accent text-black rounded-lg">
         Get Started Free
       </a>
     </div>

@@ -1,4 +1,5 @@
 ---
+const APP_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.notegod.io';
 ---
 
 <section class="py-32 bg-noter-surface relative overflow-hidden fade-up">
@@ -13,7 +14,7 @@
       Join thousands of students, freelancers, and teams who trust NoteGod.
     </p>
     <a
-      href="/register"
+      href={`${APP_URL}/register`}
       class="inline-block px-10 py-4 text-lg font-semibold text-black rounded-xl hover:brightness-110 hover:-translate-y-0.5 transition-all"
       style="background: linear-gradient(135deg, #edff00, #b8d900);"
     >
