@@ -7,11 +7,11 @@ const faqs = [
   },
   {
     q: "How much is NoteGod Pro?",
-    a: "Pro is $2.99/month or $24/year (about $2/month — 33% off when billed yearly). Students with a valid .edu email pay $1.49/month or $12/year. Pro unlocks unlimited projects, custom shortcuts, advanced tags, nested folders, custom templates, Google Drive integration, the Web Clipper, audio/video/office attachments, 1 GB of storage, and project sharing with up to 2 invited collaborators.",
+    a: "Pro is USD $2.99/month or USD $24/year (about $2/month — 33% off when billed yearly). Students with a valid .edu email pay USD $1.49/month or $12/year. International customers are billed in their local currency at checkout. Pro unlocks unlimited projects, custom shortcuts, advanced tags, nested folders, custom templates, Google Drive integration, the Web Clipper, audio/video/office attachments, 1 GB of storage, and project sharing with up to 2 invited collaborators.",
   },
   {
     q: "How does Team pricing work?",
-    a: "Team is $3.99/user/month or $36/user/year (about $3/user/month). You pick how many seats you need — from 1 to 15. Need to add someone later? You only pay the prorated amount for the days left in your billing cycle. We always show you the exact amount before you confirm. No hidden fees.",
+    a: "Team is USD $3.99/user/month or USD $36/user/year (about $3/user/month). You pick how many seats you need — from 1 to 15. Need to add someone later? You only pay the prorated amount for the days left in your billing cycle. We always show you the exact amount before you confirm. No hidden fees. International customers are billed in their local currency at checkout.",
   },
   {
     q: "How does the free trial work?",
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "Is there a student discount?",
-    a: "Yes. Students with a valid .edu email get NoteGod Pro for $1.49/month (or $12/year). The 7-day free trial applies too.",
+    a: "Yes. Students with a valid .edu email get NoteGod Pro for USD $1.49/month (or USD $12/year). The 7-day free trial applies too.",
   },
   {
     q: "Can I self-host NoteGod?",

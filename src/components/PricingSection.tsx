@@ -220,10 +220,12 @@ export default function PricingSection() {
                     <span style={{ fontSize: '36px', fontWeight: 700, color: '#f3f0eb' }}>
                       ${yearly ? monthlyEquiv : price.toFixed(2)}
                     </span>
-                    <span style={{ fontSize: '14px', color: '#aeacab' }}>/mo{plan.perUser ? '/user' : ''}</span>
+                    <span style={{ fontSize: '14px', color: '#aeacab' }}>
+                      /mo{plan.perUser ? '/user' : ''} <span style={{ fontSize: '11px', color: '#908e8c', fontWeight: 600 }}>USD</span>
+                    </span>
                     {yearly && (
                       <p style={{ fontSize: '12px', color: '#aeacab', marginTop: '4px' }}>
-                        Billed ${price.toFixed(2)}/yr{plan.perUser ? ' per user' : ''}
+                        Billed ${price.toFixed(2)} USD/yr{plan.perUser ? ' per user' : ''}
                       </p>
                     )}
                   </div>
@@ -411,6 +413,20 @@ export default function PricingSection() {
           );
         })}
       </div>
+
+      {/* Currency disclaimer */}
+      <p
+        style={{
+          textAlign: 'center',
+          color: '#aeacab',
+          fontSize: '12px',
+          marginTop: '32px',
+          lineHeight: 1.6,
+        }}
+      >
+        All prices in <strong style={{ color: '#c9c7c4' }}>USD</strong>. International
+        customers are charged in their local currency at checkout (e.g. CAD, MXN, BRL, ARS).
+      </p>
 
       {/* Slider thumb styles */}
       <style>{`
