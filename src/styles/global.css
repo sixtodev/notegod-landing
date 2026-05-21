@@ -1,30 +1,11 @@
 @import "tailwindcss";
 
+/* TRIAL: Gros Ventre Semibold on display titles (was Morganite — branch try/gros-ventre-titles).
+   Single face mapped across the full weight range so every title renders Semibold. */
 @font-face {
-  font-family: 'Morganite';
-  src: url('/fonts/Morganite-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Morganite';
-  src: url('/fonts/Morganite-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Morganite';
-  src: url('/fonts/Morganite-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Morganite';
-  src: url('/fonts/Morganite-Medium.ttf') format('truetype');
-  font-weight: 500;
+  font-family: 'Gros Ventre';
+  src: url('/fonts/Gros%20Ventre%20Semibold.ttf') format('truetype');
+  font-weight: 100 900;
   font-display: swap;
 }
 
@@ -46,8 +27,33 @@
   --color-noter-yellow: #d4a84b;
   --color-noter-red: #ef4444;
 
-  --font-family-display: 'Morganite', Impact, 'Arial Narrow', sans-serif;
+  --font-family-display: 'Gros Ventre', Impact, 'Arial Narrow', sans-serif;
   --font-family-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Display title scale — sized for the Gros Ventre typeface. Tune title sizes HERE, never in components.
+   clamp(min, fluid, max): min = phone floor, max = desktop cap, reached at the width noted per tier.
+   fluid = affine term (rem + vw): the rem intercept lets phones/tablets shrink WITHOUT moving the
+   desktop cap, so 13-14" laptops and bigger stay at max. */
+.display-xl {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.9rem, -1.9rem + 9.4vw, 5.15rem); /* caps ~1200px */
+  line-height: 0.95;
+}
+.display-lg {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.55rem, -1.6rem + 7.7vw, 3.7rem); /* caps ~1100px */
+  line-height: 0.95;
+}
+.display-md {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.4rem, -1.75rem + 7.5vw, 2.95rem); /* caps ~1000px */
+  line-height: 0.95;
+}
+.display-sm {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  line-height: 1;
 }
 
 html {

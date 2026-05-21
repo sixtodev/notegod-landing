@@ -57,12 +57,10 @@ export default function FAQ() {
   return (
     <section id="faq" style={{ padding: '96px 24px', maxWidth: '768px', margin: '0 auto' }}>
       <h2
+        className="display-md"
         style={{
-          fontFamily: "'Morganite', Impact, sans-serif",
-          fontSize: 'clamp(3rem, 8vw, 5rem)',
           textTransform: 'uppercase',
           textAlign: 'center',
-          lineHeight: 0.9,
           letterSpacing: '-0.02em',
           marginBottom: '48px',
           color: '#f3f0eb',
