@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = "NoteGod - Secure Note-Taking for Students, Freelancers & Teams",
-  description = "The most affordable note-taking app with AES-256 encryption, offline mode, Google Drive integration, Web Clipper, and team collaboration. Free forever plan available.",
+  title = "NoteGod — Secure, Affordable Encrypted Notes",
+  description = "Encrypted note-taking with AES-256, offline mode, Google Drive sync, and team collaboration. Free forever plan, no credit card.",
   canonical = "https://notegod.io",
   noindex = false,
 } = Astro.props;
@@ -93,14 +93,19 @@ const faqSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={fullUrl} />
     <meta property="og:site_name" content="NoteGod" />
-    <meta property="og:image" content="https://notegod.io/notegod.png" />
+    <meta property="og:image" content="https://notegod.io/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NoteGod — secure, encrypted note-taking app" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    {/* TODO: add twitter:site (@handle) and twitter:creator when the X account exists */}
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://notegod.io/notegod.png" />
+    <meta name="twitter:image" content="https://notegod.io/og-image.png" />
+    <meta name="twitter:image:alt" content="NoteGod — secure, encrypted note-taking app" />
 
     <!-- hreflang: solo English por ahora, x-default apunta a la misma -->
     <link rel="alternate" hreflang="en" href={fullUrl} />
@@ -110,12 +115,15 @@ const faqSchema = {
     <meta name="geo.region" content="MX" />
     <meta name="geo.region" content="CA" />
 
-    <link rel="icon" type="image/png" href="/notegod.png" />
+    <!-- Icons & PWA manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
 
     <!-- Preload fonts -->
-    <link rel="preload" href="/fonts/Morganite-Bold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Morganite-Black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/Gros%20Ventre%20Semibold.ttf" as="font" type="font/ttf" crossorigin />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

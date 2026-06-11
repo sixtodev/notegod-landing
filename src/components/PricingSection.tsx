@@ -82,11 +82,9 @@ export default function PricingSection() {
     <section id="pricing" style={{ padding: '96px 24px', maxWidth: '1152px', margin: '0 auto' }}>
       <div style={{ textAlign: 'center', marginBottom: '48px' }}>
         <h2
+          className="display-md"
           style={{
-            fontFamily: "'Morganite', Impact, sans-serif",
-            fontSize: 'clamp(3rem, 8vw, 5.5rem)',
             textTransform: 'uppercase',
-            lineHeight: 0.9,
             letterSpacing: '-0.02em',
             marginBottom: '16px',
             color: '#f3f0eb',
