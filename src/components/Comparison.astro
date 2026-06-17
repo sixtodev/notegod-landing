@@ -1,19 +1,25 @@
 ---
-const rows = [
-  { feature: "Rich Text (WYSIWYG)", ngFree: true, ngPro: true, joplin: true, notion: true, obsidian: false },
-  { feature: "Offline Mode", ngFree: true, ngPro: true, joplin: true, notion: true, obsidian: true },
-  { feature: "Google Drive embeds", ngFree: false, ngPro: true, joplin: false, notion: true, obsidian: false },
-  { feature: "Web Clipper", ngFree: false, ngPro: true, joplin: true, notion: true, obsidian: true },
-  { feature: "Note Comments", ngFree: false, ngPro: true, joplin: false, notion: true, obsidian: false },
-  { feature: "Nested Folders", ngFree: false, ngPro: true, joplin: true, notion: true, obsidian: true },
-  { feature: "Shortcuts (saved views)", ngFree: true, ngPro: true, joplin: false, notion: true, obsidian: false },
-  { feature: "Custom Branding (shared pages)", ngFree: false, ngPro: true, joplin: false, notion: false, obsidian: true },
-];
+const APP_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.notegod.io';
 
-const textRows = [
-  { feature: "Public Sharing", ngFree: "3 links", ngPro: "Unlimited", joplin: "Cloud", notion: "Yes", obsidian: "$8/mo" },
-  { feature: "Price (USD)", ngFree: "Free", ngPro: "$2.99/mo", joplin: "Free / $3 Cloud", notion: "Free", obsidian: "Free" },
-  { feature: "Storage", ngFree: "50 MB", ngPro: "1 GB", joplin: "Self-host / 1 GB", notion: "5 MB upload", obsidian: "Local" },
+const cards = [
+  {
+    name: "Notion",
+    tag: "Powerful, but heavy",
+    body: "Endless blocks, databases, and a learning curve to match. Great for power users — but it gets complex fast, and team pricing climbs to $10–15 per user.",
+    highlight: false,
+  },
+  {
+    name: "Obsidian",
+    tag: "Flexible, but technical",
+    body: "A tinkerer's dream of local files and plugins. But you assemble it yourself, and the cloud experience costs extra — Sync plus Publish add up to roughly $12 a month.",
+    highlight: false,
+  },
+  {
+    name: "NoteGod",
+    tag: "Everything you need, simple",
+    body: "Rich editor, AES-256 encryption, collaboration, Google Drive, Web Clipper, and offline — all included. No setup, no plugins, no per-feature upsells.",
+    highlight: true,
+  },
 ];
 ---
 
@@ -21,73 +27,32 @@ const textRows = [
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-16 fade-up">
       <h2 class="display-md uppercase tracking-tight mb-4">
-        Why <span class="text-noter-accent">NoteGod</span>?
+        Everything you need.<br/><span class="text-noter-accent">None of the complexity.</span>
       </h2>
-      <p class="text-noter-text-muted text-lg">See how we compare to the alternatives</p>
+      <p class="text-noter-text-muted text-lg">The all-in-one notes app — without the setup or the price tag.</p>
     </div>
 
-    <div class="rounded-xl border border-noter-border overflow-hidden fade-up">
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm" style="min-width: 700px;">
-          <thead>
-            <tr class="bg-noter-surface-hover">
-              <th class="text-left py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted">Feature</th>
-              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">NoteGod Free</th>
-              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-accent text-center border-x border-noter-accent/20" style="background: rgba(237,255,0,0.05);">NoteGod Pro</th>
-              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">Joplin</th>
-              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">Notion</th>
-              <th class="py-3 px-4 text-xs uppercase tracking-wider font-semibold text-noter-text-muted text-center">Obsidian</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, i) => (
-              <tr class={i % 2 === 0 ? "bg-noter-surface/30" : ""}>
-                <td class="py-3 px-4 border-b border-noter-border text-noter-text-muted">{row.feature}</td>
-                <td class="py-3 px-4 border-b border-noter-border text-center">
-                  {row.ngFree
-                    ? <span class="text-noter-green font-bold">&#10003;</span>
-                    : <span class="text-noter-red">&#10007;</span>
-                  }
-                </td>
-                <td class="py-3 px-4 border-b border-noter-border text-center border-x border-noter-accent/20" style="background: rgba(237,255,0,0.03);">
-                  {row.ngPro
-                    ? <span class="text-noter-green font-bold">&#10003;</span>
-                    : <span class="text-noter-red">&#10007;</span>
-                  }
-                </td>
-                <td class="py-3 px-4 border-b border-noter-border text-center">
-                  {row.joplin
-                    ? <span class="text-noter-green font-bold">&#10003;</span>
-                    : <span class="text-noter-red">&#10007;</span>
-                  }
-                </td>
-                <td class="py-3 px-4 border-b border-noter-border text-center">
-                  {row.notion
-                    ? <span class="text-noter-green font-bold">&#10003;</span>
-                    : <span class="text-noter-red">&#10007;</span>
-                  }
-                </td>
-                <td class="py-3 px-4 border-b border-noter-border text-center">
-                  {row.obsidian
-                    ? <span class="text-noter-green font-bold">&#10003;</span>
-                    : <span class="text-noter-red">&#10007;</span>
-                  }
-                </td>
-              </tr>
-            ))}
-            {textRows.map((row, i) => (
-              <tr class={(rows.length + i) % 2 === 0 ? "bg-noter-surface/30" : ""}>
-                <td class={`py-3 px-4 border-b border-noter-border text-noter-text-muted ${row.feature === 'Price' ? 'font-semibold text-noter-text' : ''}`}>{row.feature}</td>
-                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text">{row.ngFree}</td>
-                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-accent font-semibold border-x border-noter-accent/20" style="background: rgba(237,255,0,0.03);">{row.ngPro}</td>
-                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text-dim">{row.joplin}</td>
-                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text-dim">{row.notion}</td>
-                <td class="py-3 px-4 border-b border-noter-border text-center text-noter-text-dim">{row.obsidian}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+      {cards.map((card) => (
+        <div class={`rounded-2xl border p-7 flex flex-col ${card.highlight ? 'border-noter-accent/50 bg-noter-accent/[0.04]' : 'border-noter-border bg-noter-surface/30'}`}>
+          <h3 class={`text-xl font-bold mb-1 ${card.highlight ? 'text-noter-accent' : 'text-noter-text'}`}>{card.name}</h3>
+          <p class="text-xs font-semibold uppercase tracking-wider text-noter-text-muted mb-4">{card.tag}</p>
+          <p class="text-noter-text-muted text-sm leading-relaxed">{card.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center fade-up">
+      <p class="text-noter-text-muted text-lg max-w-2xl mx-auto">
+        All of it — encryption, collaboration, Google Drive, Web Clipper, and offline —
+        for <span class="text-noter-accent font-bold">$2.99/mo</span>. No add-ons, no per-feature upsells.
+      </p>
+      <a href={`${APP_URL}/register`} class="inline-flex items-center mt-7 px-8 py-4 font-semibold text-black rounded-xl text-base transition-all hover:brightness-110 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #edff00, #b8d900);">
+        Start Free
+      </a>
+      <p class="text-noter-text-dim text-sm mt-3 flex items-center justify-center gap-1.5">
+        <span class="text-noter-green">&#10003;</span> No credit card required
+      </p>
     </div>
   </div>
 </section>
