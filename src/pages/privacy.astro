@@ -7,7 +7,7 @@ import '../styles/global.css';
 
 <Layout
   title="Privacy Policy - NoteGod"
-  description="NoteGod Privacy Policy. Learn how we collect, use, and protect your data with AES-256-GCM encryption and zero-knowledge architecture."
+  description="NoteGod Privacy Policy. Learn how we collect, use, and protect your data with AES-256-GCM encryption at rest and Row-Level Security."
 >
   <Navbar />
   <main class="pt-24 pb-20">
@@ -43,8 +43,9 @@ import '../styles/global.css';
           <h3 class="text-lg font-medium text-noter-text mb-2">1.2 Note Content</h3>
           <p class="mb-4">
             Your notes and associated metadata (titles, tags, folder structure) are stored on our servers.
-            All note content is encrypted with AES-256-GCM before storage using a zero-knowledge architecture,
-            meaning we cannot read or access the plaintext content of your notes.
+            All note content is encrypted at rest with AES-256-GCM before storage, and each account's
+            data is isolated using Row-Level Security. Encryption and decryption are performed
+            server-side so we can provide features such as note sharing and data export.
           </p>
 
           <h3 class="text-lg font-medium text-noter-text mb-2">1.3 Billing Information</h3>
@@ -97,8 +98,8 @@ import '../styles/global.css';
           <ul class="list-disc list-inside space-y-2 ml-2">
             <li>
               <strong class="text-noter-text">Encryption at rest:</strong> All note content is encrypted
-              using AES-256-GCM before being stored. Encryption keys are derived in a way that prevents
-              us from reading your notes.
+              using AES-256-GCM before being stored. The encryption key is held securely server-side,
+              separately from the database.
             </li>
             <li>
               <strong class="text-noter-text">Encryption in transit:</strong> All communication between

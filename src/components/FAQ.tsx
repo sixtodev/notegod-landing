@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "Is my data encrypted?",
-    a: "Yes. All note content is encrypted with AES-256-GCM before storage. We use a zero-knowledge architecture, meaning we cannot read your notes.",
+    a: "Yes. All note content is encrypted at rest with AES-256-GCM and in transit with TLS 1.3, and every account's data is isolated with Row-Level Security. We never sell your data or use it for ads. (Encryption/decryption happens server-side so we can power features like sharing and export — a fully zero-knowledge private vault is on our roadmap.)",
   },
   {
     q: "Can I use NoteGod offline?",
