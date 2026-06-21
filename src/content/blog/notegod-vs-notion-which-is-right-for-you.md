@@ -1,6 +1,6 @@
 ---
 title: "NoteGod vs Notion: Which One Is Right for You?"
-description: "Notion is a powerful, team-focused workspace. NoteGod is a simple, low-cost notes app. They share the same foundation but serve different people — here's how to tell which one fits you."
+description: "Notion is a powerful team workspace; NoteGod is a simple, low-cost notes app. Same foundation, different users — here's how to tell which one fits you."
 pubDate: 2026-06-20
 author: "NoteGod"
 tags: ["comparison", "productivity", "guides"]

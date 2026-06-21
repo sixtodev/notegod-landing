@@ -1,6 +1,6 @@
 ---
 title: "How to Choose a Secure Note-Taking App (and Why It Matters)"
-description: "Your notes hold more than reminders — contracts, client data, half-formed ideas. Here's what you're really up against, what 'encrypted' actually means, and how to pick an app you can trust."
+description: "Your notes hold contracts, client data, and ideas. Here's what you're up against and how to pick a note-taking app you can actually trust."
 pubDate: 2026-06-20
 author: "NoteGod"
 tags: ["security", "privacy", "guides"]
