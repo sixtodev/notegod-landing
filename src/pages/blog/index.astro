@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const dateFormat = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Layout
+  title="Blog - NoteGod"
+  description="Guides on secure note-taking, productivity, and choosing the right notes app for students, freelancers, and teams."
+>
+  <Navbar />
+  <main class="pt-24 pb-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <header class="mb-12">
+        <h1 class="text-4xl font-bold text-noter-text mb-3">Blog</h1>
+        <p class="text-noter-text-dim text-[15px]">
+          Practical guides on secure note-taking, productivity, and the tools that keep your ideas safe.
+        </p>
+      </header>
+
+      {posts.length === 0 ? (
+        <p class="text-noter-text-muted">No posts yet — check back soon.</p>
+      ) : (
+        <ul class="space-y-10">
+          {posts.map((post) => (
+            <li>
+              <article>
+                <a href={`/blog/${post.id}`} class="group block">
+                  <h2 class="text-2xl font-semibold text-noter-text mb-2 group-hover:text-noter-accent transition-colors">
+                    {post.data.title}
+                  </h2>
+                  <p class="text-noter-text-muted text-[15px] leading-relaxed mb-3">
+                    {post.data.description}
+                  </p>
+                  <div class="flex items-center gap-3 text-xs text-noter-text-dim">
+                    <time datetime={post.data.pubDate.toISOString()}>
+                      {dateFormat.format(post.data.pubDate)}
+                    </time>
+                    {post.data.tags.length > 0 && (
+                      <span class="flex gap-2">
+                        {post.data.tags.map((tag) => (
+                          <span class="text-noter-accent">#{tag}</span>
+                        ))}
+                      </span>
+                    )}
+                  </div>
+                </a>
+              </article>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </main>
+  <Footer />
+</Layout>

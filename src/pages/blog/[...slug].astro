@@ -1,0 +1,101 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const url = `https://notegod.io/blog/${post.id}`;
+const dateFormat = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+// BlogPosting structured data — tells Google and AI engines this is
+// editorial content with an author, publish date, and publisher.
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  author: { '@type': 'Organization', name: post.data.author },
+  publisher: {
+    '@type': 'Organization',
+    name: 'NoteGod',
+    logo: { '@type': 'ImageObject', url: 'https://notegod.io/notegod.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  keywords: post.data.tags.join(', '),
+};
+---
+
+<Layout title={`${post.data.title} - NoteGod`} description={post.data.description}>
+  <Navbar />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <main class="pt-24 pb-20">
+    <article class="max-w-3xl mx-auto px-6">
+      <header class="mb-10">
+        <a href="/blog" class="text-noter-accent text-sm hover:underline">← Back to blog</a>
+        <h1 class="text-4xl font-bold text-noter-text mt-4 mb-3">{post.data.title}</h1>
+        <div class="flex items-center gap-3 text-sm text-noter-text-dim">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {dateFormat.format(post.data.pubDate)}
+          </time>
+          <span>·</span>
+          <span>{post.data.author}</span>
+        </div>
+      </header>
+
+      <div class="prose-notegod space-y-5 text-noter-text-muted text-[15px] leading-relaxed">
+        <Content />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  /* Minimal typography for rendered Markdown content. */
+  .prose-notegod h2 {
+    color: var(--color-noter-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-notegod h3 {
+    color: var(--color-noter-text);
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-notegod a {
+    color: var(--color-noter-accent);
+    text-decoration: underline;
+  }
+  .prose-notegod ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .prose-notegod strong {
+    color: var(--color-noter-text);
+  }
+</style>

@@ -1,0 +1,25 @@
+# NoteGod
+
+> NoteGod is an all-in-one encrypted note-taking app for students, freelancers, and small teams. Notes are encrypted at rest with AES-256-GCM and in transit with TLS 1.3, work fully offline as a PWA, and sync with Google Drive. There is a free plan (no credit card) and paid plans starting at $2.99/month.
+
+## Key facts
+
+- Product: web and PWA note-taking app at https://notegod.io
+- Encryption: AES-256-GCM at rest, TLS 1.3 in transit, per-account isolation via Row-Level Security
+- Offline: full offline support as a Progressive Web App, with automatic sync on reconnect
+- Integrations: Google Drive sync
+- Collaboration: shared projects with editor and viewer roles, comments, and an activity feed
+- Pricing: Free ($0), Pro ($2.99/mo), Team ($3.99/mo); student plan at $1.49/mo with a valid .edu email
+- Free trial: 7 days on paid plans, no credit card required
+- Privacy: data is never sold and is never used to train machine-learning models
+
+## Pages
+
+- [Home](https://notegod.io/): product overview, features, pricing, and FAQ
+- [Blog](https://notegod.io/blog): guides on secure note-taking, productivity, and tool comparisons
+- [Privacy Policy](https://notegod.io/privacy): how data is collected, stored, and protected
+- [Terms of Service](https://notegod.io/terms): terms governing use of the service
+
+## Contact
+
+- Support: support@notegod.io
