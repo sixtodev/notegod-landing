@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout
+  title="Security - NoteGod"
+  description="How NoteGod protects your notes: AES-256-GCM at rest, TLS 1.3 in transit, per-account isolation — plus an honest look at what we do and don't yet do."
+>
+  <Navbar />
+  <main class="pt-24 pb-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <header class="mb-12">
+        <h1 class="text-4xl font-bold text-noter-text mb-3">Security</h1>
+        <p class="text-noter-text-dim text-sm">Last updated: June 22, 2026</p>
+      </header>
+
+      <div class="space-y-10 text-noter-text-muted text-[15px] leading-relaxed">
+
+        <!-- Intro / philosophy -->
+        <section>
+          <p>
+            Your notes are yours. This page explains, in plain language, exactly how we protect them —
+            and, just as importantly, what we do <strong class="text-noter-text">not</strong> yet do. We
+            would rather tell you the honest truth about our current architecture than hide behind
+            buzzwords. Security claims only mean something when they're specific and verifiable.
+          </p>
+        </section>
+
+        <!-- 1. How we protect your notes -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">1. How we protect your notes</h2>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>
+              <strong class="text-noter-text">Encryption at rest:</strong> All note content is encrypted
+              with AES-256-GCM before it is stored. If someone obtained a copy of our database, the note
+              content would be unreadable ciphertext.
+            </li>
+            <li>
+              <strong class="text-noter-text">Encryption in transit:</strong> Everything between your
+              device and our servers travels over TLS 1.3 (HTTPS everywhere). No note is ever sent in
+              the clear over the network.
+            </li>
+            <li>
+              <strong class="text-noter-text">Per-account isolation:</strong> We use Row-Level Security
+              (RLS) at the database level, so one account can never read another account's data — even if
+              application code had a bug.
+            </li>
+            <li>
+              <strong class="text-noter-text">Hardened infrastructure:</strong> We run on SOC 2-compliant
+              hosting with restricted, monitored internal access following least-privilege principles.
+            </li>
+          </ul>
+        </section>
+
+        <!-- 2. What this protects against — and what it doesn't (yet) -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">2. What this protects against — and what it doesn't (yet)</h2>
+          <p class="mb-4">
+            This is the part most apps won't tell you. Honesty is the point, so here it is.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-noter-surface border border-noter-border rounded-lg p-5">
+              <h3 class="text-base font-medium text-noter-green mb-3">What we protect against today</h3>
+              <ul class="space-y-2 text-sm">
+                <li>✓ A stolen or leaked database — note content is encrypted ciphertext.</li>
+                <li>✓ Network eavesdropping — TLS 1.3 in transit.</li>
+                <li>✓ One user accessing another user's data — enforced at the database level.</li>
+                <li>✓ Your data being sold or mined — we never do this (see section 3).</li>
+              </ul>
+            </div>
+            <div class="bg-noter-surface border border-noter-border rounded-lg p-5">
+              <h3 class="text-base font-medium text-noter-text mb-3">What we are honest about</h3>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  Today, encryption and decryption happen <strong class="text-noter-text">server-side</strong>,
+                  which means our servers hold the keys. This lets us power features like search, sharing,
+                  and export.
+                </li>
+                <li>
+                  It also means we are <strong class="text-noter-text">not yet zero-knowledge</strong>:
+                  in principle, our systems can access note content. We do not, but we want you to know the
+                  difference between "we don't" and "we can't."
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="mt-4">
+            A fully zero-knowledge vault — where your notes are encrypted on your device with a key only you
+            hold, so we <em>cannot</em> read them even if we wanted to — is on our roadmap (see section 5).
+            We will not use the term "zero-knowledge" in our marketing until our architecture actually
+            earns it.
+          </p>
+        </section>
+
+        <!-- 3. What we never do -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">3. What we never do</h2>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>We never sell, rent, or share your personal data with advertisers or data brokers.</li>
+            <li>We never use your note content to train machine learning models.</li>
+            <li>We never show ads or build advertising profiles from your activity.</li>
+            <li>We never use tracking or advertising cookies — our website analytics are cookieless.</li>
+          </ul>
+        </section>
+
+        <!-- 4. Your data, your control -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">4. Your data, your control</h2>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>
+              <strong class="text-noter-text">Export anytime:</strong> You can export all of your data from
+              your account settings. No lock-in.
+            </li>
+            <li>
+              <strong class="text-noter-text">Delete permanently:</strong> When you delete your account,
+              your notes and personal data are permanently removed within 30 days, and any encrypted backups
+              are purged within 90 days.
+            </li>
+            <li>
+              <strong class="text-noter-text">GDPR rights:</strong> Access, rectification, erasure, and
+              portability are supported. See our
+              <a href="/privacy#gdpr" class="text-noter-accent hover:underline">Privacy Policy</a> for details.
+            </li>
+          </ul>
+        </section>
+
+        <!-- 5. Our roadmap to zero-knowledge -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">5. Our roadmap to zero-knowledge</h2>
+          <p class="mb-3">
+            True end-to-end encryption is a real engineering decision with real trade-offs, and we want to
+            do it properly rather than ship a half-measure. Getting there means solving:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>Client-side key derivation from your password, so the key never reaches our servers.</li>
+            <li>Account recovery, since a forgotten password can no longer be reset to reach your data.</li>
+            <li>Search and sharing that work when the server only ever sees ciphertext.</li>
+          </ul>
+          <p class="mt-4">
+            When we ship it, we plan to back the claim up — not just assert it. That means publishing the
+            technical details, and pursuing an independent third-party security audit so you don't have to
+            take our word for it.
+          </p>
+        </section>
+
+        <!-- 6. Reporting a vulnerability -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">6. Reporting a vulnerability</h2>
+          <p>
+            If you believe you've found a security issue, we want to hear from you. Please email
+            <a href="mailto:support@notegod.io" class="text-noter-accent hover:underline">support@notegod.io</a>
+            with the details, and we will respond as quickly as we can. We appreciate responsible disclosure
+            and will not pursue action against good-faith research.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
