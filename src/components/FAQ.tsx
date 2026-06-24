@@ -35,7 +35,11 @@ const faqs = [
   },
   {
     q: "Is my data encrypted?",
-    a: "Yes. All note content is encrypted at rest with AES-256-GCM and in transit with TLS 1.3, and every account's data is isolated with Row-Level Security. We never sell your data or use it for ads. (Encryption/decryption happens server-side so we can power features like sharing and export — a fully zero-knowledge private vault is on our roadmap.)",
+    a: "Yes. All note content is encrypted at rest with AES-256-GCM and in transit with TLS 1.3, and every account's data is isolated with Row-Level Security. We never sell your data or use it for ads. For your most sensitive notes, the Private Vault adds end-to-end, zero-knowledge encryption — those notes are encrypted on your device with a key only you hold, so not even we can read them.",
+  },
+  {
+    q: "What is the Private Vault?",
+    a: "Opt-in end-to-end encryption for individual notes. When you make a note private, its content is encrypted on your device with a key derived from a vault passphrase only you know — it never reaches our servers, so we cannot read those notes even if we wanted to. You set a vault passphrase and receive a recovery key (your only backup if you forget it). Titles and tags stay visible, and vault notes cannot be shared with a public link. See our Private Vault guide for how to keep your recovery key safe.",
   },
   {
     q: "Can I use NoteGod offline?",

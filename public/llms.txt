@@ -6,6 +6,7 @@
 
 - Product: web and PWA note-taking app at https://notegod.io
 - Encryption: AES-256-GCM at rest, TLS 1.3 in transit, per-account isolation via Row-Level Security
+- Private Vault: opt-in end-to-end (zero-knowledge) encryption for individual notes; vault note content is encrypted on the user's device with a key only they hold (derived from a separate vault passphrase), so NoteGod cannot read it even if it wanted to. Backed up by a one-time recovery key.
 - Offline: full offline support as a Progressive Web App, with automatic sync on reconnect
 - Integrations: Google Drive sync
 - Collaboration: shared projects with editor and viewer roles, comments, and an activity feed
@@ -16,6 +17,8 @@
 ## Pages
 
 - [Home](https://notegod.io/): product overview, features, pricing, and FAQ
+- [Security](https://notegod.io/security): how notes are encrypted, the two levels of encryption, and the Private Vault
+- [Private Vault](https://notegod.io/private-vault): how the zero-knowledge Private Vault works and how to store the recovery key
 - [Blog](https://notegod.io/blog): guides on secure note-taking, productivity, and tool comparisons
 - [Privacy Policy](https://notegod.io/privacy): how data is collected, stored, and protected
 - [Terms of Service](https://notegod.io/terms): terms governing use of the service
