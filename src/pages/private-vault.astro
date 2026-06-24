@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout
+  title="Private Vault & Recovery Key — NoteGod"
+  description="How NoteGod's Private Vault works: end-to-end encrypted notes only you can read, and how to store your recovery key so you never lose access."
+>
+  <Navbar />
+  <main class="pt-24 pb-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <header class="mb-12">
+        <h1 class="text-4xl font-bold text-noter-text mb-3">Private Vault & your recovery key</h1>
+        <p class="text-noter-text-dim text-sm">The notes only you can read — and how to keep that access safe.</p>
+      </header>
+
+      <div class="space-y-10 text-noter-text-muted text-[15px] leading-relaxed">
+
+        <!-- What it is -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">What is the Private Vault?</h2>
+          <p>
+            The Private Vault is end-to-end encryption for your most sensitive notes. When you make a note
+            private, its content is encrypted <strong class="text-noter-text">on your device</strong> with a
+            key derived from your vault passphrase — a passphrase only you know, that never reaches our
+            servers. We store only unreadable ciphertext.
+          </p>
+          <p class="mt-3">
+            The result: <strong class="text-noter-text">we cannot read your vault notes, even if we wanted
+            to</strong>, and neither could anyone who stole our entire database. It's true zero-knowledge,
+            opt-in one note at a time. The rest of your notes keep working exactly as before.
+          </p>
+        </section>
+
+        <!-- How it works -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">Two things keep your vault safe</h2>
+          <div class="space-y-4">
+            <div class="bg-noter-surface border border-noter-border rounded-lg p-5">
+              <h3 class="text-base font-medium text-noter-text mb-1">1. Your vault passphrase</h3>
+              <p class="text-sm">
+                Separate from your login password. You enter it once per session to unlock the vault. We never
+                see it and can never reset it.
+              </p>
+            </div>
+            <div class="bg-noter-surface border border-noter-border rounded-lg p-5">
+              <h3 class="text-base font-medium text-noter-text mb-1">2. Your recovery key</h3>
+              <p class="text-sm">
+                A one-time code shown when you set up the vault. It's your <strong class="text-noter-text">only
+                way back in</strong> if you ever forget your passphrase.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- The critical warning -->
+        <section>
+          <div class="bg-noter-accent/5 border border-noter-accent/20 rounded-xl p-5">
+            <h2 class="text-xl font-semibold text-noter-text mb-2">Why we can't recover it for you</h2>
+            <p class="text-sm">
+              Because your vault key never reaches us, we have no copy of it. That's exactly what makes the
+              vault private — but it also means <strong class="text-noter-text">if you lose both your
+              passphrase and your recovery key, your vault notes cannot be recovered by anyone, including
+              us.</strong> This is the cost of true zero-knowledge, and it's the same trade-off password
+              managers and crypto wallets make.
+            </p>
+          </div>
+        </section>
+
+        <!-- How to store the recovery key -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">How to store your recovery key</h2>
+          <p class="mb-3">Treat it like the spare key to a safe. Good places to keep it:</p>
+          <ul class="space-y-2.5">
+            <li class="flex gap-3">
+              <span class="text-noter-green font-bold shrink-0">✓</span>
+              <span><strong class="text-noter-text">A password manager</strong> (1Password, Bitwarden, etc.) — the simplest safe option for most people.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-noter-green font-bold shrink-0">✓</span>
+              <span><strong class="text-noter-text">Printed on paper</strong>, stored somewhere physically safe — a drawer at home, a folder, a safe.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-noter-green font-bold shrink-0">✓</span>
+              <span><strong class="text-noter-text">A second copy</strong> in a different place, in case the first is lost or damaged.</span>
+            </li>
+          </ul>
+          <p class="mt-5 mb-3">Where <strong class="text-noter-text">not</strong> to keep it:</p>
+          <ul class="space-y-2.5">
+            <li class="flex gap-3">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span><strong class="text-noter-text">Inside NoteGod itself</strong> — if you're locked out, you can't open the note holding the key.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span><strong class="text-noter-text">A plain email or chat to yourself</strong> — those accounts can be breached, and the key would be sitting in plaintext.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span><strong class="text-noter-text">A screenshot in your camera roll</strong> if it syncs to a cloud you don't fully trust.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- If you forget -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">If you forget your passphrase</h2>
+          <p>
+            Open a vault note, choose <strong class="text-noter-text">"Forgot your passphrase?"</strong>, enter
+            your recovery key, and set a new passphrase. Your notes stay intact — only the lock changes. After
+            that, save your recovery key somewhere safe again if you moved it.
+          </p>
+        </section>
+
+        <!-- Good to know -->
+        <section>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">Good to know</h2>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li>The vault is opt-in, per note. You choose which notes are private with the lock button.</li>
+            <li>Vault note <strong class="text-noter-text">titles and tags stay visible</strong> — only the content is encrypted. Keep sensitive details in the body, not the title.</li>
+            <li>Vault notes can't be shared with a public link or saved with the Web Clipper.</li>
+            <li>The vault auto-locks after a period of inactivity and whenever you reload, so an unattended session won't stay open.</li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="text-sm text-noter-text-dim">
+            Want the technical details? See our
+            <a href="/security" class="text-noter-accent hover:underline">Security page</a>.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

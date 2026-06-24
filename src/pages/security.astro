@@ -14,7 +14,7 @@ import '../styles/global.css';
     <div class="max-w-3xl mx-auto px-6">
       <header class="mb-12">
         <h1 class="text-4xl font-bold text-noter-text mb-3">Security</h1>
-        <p class="text-noter-text-dim text-sm">Last updated: June 22, 2026</p>
+        <p class="text-noter-text-dim text-sm">Last updated: June 24, 2026</p>
       </header>
 
       <div class="space-y-10 text-noter-text-muted text-[15px] leading-relaxed">
@@ -57,7 +57,7 @@ import '../styles/global.css';
 
         <!-- 2. What this protects against — and what it doesn't (yet) -->
         <section>
-          <h2 class="text-2xl font-semibold text-noter-text mb-4">2. What this protects against — and what it doesn't (yet)</h2>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">2. What this protects against</h2>
           <p class="mb-4">
             This is the part most apps won't tell you. Honesty is the point, so here it is.
           </p>
@@ -73,27 +73,25 @@ import '../styles/global.css';
               </ul>
             </div>
             <div class="bg-noter-surface border border-noter-border rounded-lg p-5">
-              <h3 class="text-base font-medium text-noter-text mb-3">What we are honest about</h3>
+              <h3 class="text-base font-medium text-noter-text mb-3">Two levels of encryption</h3>
               <ul class="space-y-2 text-sm">
                 <li>
-                  Today, encryption and decryption happen <strong class="text-noter-text">server-side</strong>,
-                  which means our servers hold the keys. This lets us power features like search, sharing,
-                  and export.
+                  <strong class="text-noter-text">Standard notes</strong> are encrypted at rest with our key,
+                  so the server can decrypt them to power search, sharing, and export. This protects against a
+                  database breach — but not against us.
                 </li>
                 <li>
-                  It also means we are <strong class="text-noter-text">not yet zero-knowledge</strong>:
-                  in principle, our systems can access note content. We do not, but we want you to know the
-                  difference between "we don't" and "we can't."
+                  <strong class="text-noter-accent">Private Vault notes</strong> are encrypted on your device
+                  with a key only you hold. We can <em>never</em> read them — true zero-knowledge (see section 5).
                 </li>
               </ul>
             </div>
           </div>
 
           <p class="mt-4">
-            A fully zero-knowledge vault — where your notes are encrypted on your device with a key only you
-            hold, so we <em>cannot</em> read them even if we wanted to — is on our roadmap (see section 5).
-            We will not use the term "zero-knowledge" in our marketing until our architecture actually
-            earns it.
+            We use the word "zero-knowledge" only for the Private Vault, because that is the only place our
+            architecture actually earns it — your vault key never reaches our servers. For everything else we
+            say exactly what we do: encrypted at rest, and readable by us to power the features you asked for.
           </p>
         </section>
 
@@ -129,22 +127,36 @@ import '../styles/global.css';
           </ul>
         </section>
 
-        <!-- 5. Our roadmap to zero-knowledge -->
+        <!-- 5. The Private Vault -->
         <section>
-          <h2 class="text-2xl font-semibold text-noter-text mb-4">5. Our roadmap to zero-knowledge</h2>
+          <h2 class="text-2xl font-semibold text-noter-text mb-4">5. The Private Vault — zero-knowledge encryption</h2>
           <p class="mb-3">
-            True end-to-end encryption is a real engineering decision with real trade-offs, and we want to
-            do it properly rather than ship a half-measure. Getting there means solving:
+            For your most sensitive notes, the Private Vault encrypts the note content
+            <strong class="text-noter-text">on your device</strong> before it ever reaches us. The key is
+            derived from a vault passphrase only you know — it never touches our servers. We store only
+            unreadable ciphertext, so we cannot read your vault notes even if we wanted to, and neither could
+            anyone who stole our entire database.
           </p>
           <ul class="list-disc list-inside space-y-2 ml-2">
-            <li>Client-side key derivation from your password, so the key never reaches our servers.</li>
-            <li>Account recovery, since a forgotten password can no longer be reset to reach your data.</li>
-            <li>Search and sharing that work when the server only ever sees ciphertext.</li>
+            <li>
+              <strong class="text-noter-text">A separate passphrase</strong> unlocks the vault for your
+              session. We never see it and can never reset it.
+            </li>
+            <li>
+              <strong class="text-noter-text">A recovery key</strong> is your only backup if you forget the
+              passphrase. Lose both and your vault notes are unrecoverable — that is the cost of true
+              zero-knowledge.
+              <a href="/private-vault" class="text-noter-accent hover:underline">How to keep your recovery key safe →</a>
+            </li>
+            <li>
+              <strong class="text-noter-text">Honest limits:</strong> vault note titles and tags stay visible
+              to us — only the content is encrypted — and vault notes can't be shared with a public link or
+              the Web Clipper. Keep sensitive details in the body, not the title.
+            </li>
           </ul>
           <p class="mt-4">
-            When we ship it, we plan to back the claim up — not just assert it. That means publishing the
-            technical details, and pursuing an independent third-party security audit so you don't have to
-            take our word for it.
+            The Private Vault is opt-in, one note at a time — the rest of your notes keep working exactly as
+            before.
           </p>
         </section>
 
