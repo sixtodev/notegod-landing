@@ -34,7 +34,7 @@ None of this makes Evernote a bad product. It's simply optimizing for a differen
 NoteGod is built for the person who wants to **just write and keep it private** — students, freelancers, writers, and small teams who value getting an idea down over managing a heavy archive. Its priorities are different on purpose:
 
 - **A fair, predictable price.** A capable free plan with no credit card required, and Pro at $2.99/mo — affordable instead of creeping upward over time.
-- **Private by default.** Your notes are encrypted at rest with AES-256, isolated per account, and never sold or used for AI training. For freelancers, that means client notes stay confidential.
+- **Private by default.** Your notes are [encrypted at rest with AES-256](/blog/how-to-choose-a-secure-note-taking-app), isolated per account, and never sold or used for AI training. For freelancers, that means client notes stay confidential.
 - **Simplicity first.** Open it and write. Rich formatting, organization, search, and sharing — without the bloat.
 
 It keeps the essentials and drops the weight, so the app gets out of your way.
@@ -55,5 +55,7 @@ If what you want from Evernote is a clean, private place to write and organize �
 **Choose Evernote if** you rely on heavy web clipping, deep search across a huge archive, and its mature ecosystem — and the price still works for you.
 
 **Choose NoteGod if** you want to open an app, write immediately, keep your notes private, and pay a fair, predictable price without the bloat.
+
+Still comparing? We also broke down [NoteGod vs Notion](/blog/notegod-vs-notion-which-is-right-for-you) for anyone deciding between the two.
 
 Neither is "better." They're different tools for different jobs. If the second description sounds like you, [try NoteGod for free](/) — no credit card, no setup, just start writing.

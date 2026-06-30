@@ -35,9 +35,9 @@ NoteGod is built for the person who wants to **just write** — students, freela
 
 - **Simplicity first.** Open it and write. No templates to configure, no database schema to design.
 - **Low, fair price.** A capable free plan with no credit card, and paid plans that stay affordable instead of scaling into enterprise territory.
-- **Secure by default.** Your notes are encrypted at rest and isolated per account, with no data selling and no AI training.
+- **Secure by default.** Your notes are [encrypted at rest](/blog/how-to-choose-a-secure-note-taking-app) and isolated per account, with no data selling and no AI training.
 
-It still has the essentials — rich formatting, organization, sharing, search — without asking you to become a power user first.
+It still has the essentials — rich formatting, [organization](/blog/how-to-organize-notes-so-you-find-them), sharing, search — without asking you to become a power user first.
 
 ## Same foundation, different priorities
 
@@ -55,5 +55,7 @@ If what you want from Notion is a clean place to write and organize — minus th
 **Choose Notion if** you're running a team or company, you want databases and wikis, and you're happy to invest time building a workspace that fits your processes.
 
 **Choose NoteGod if** you want to open an app, write immediately, keep your notes private, and pay a fair price without a learning curve.
+
+If you're weighing other options too, we also wrote an honest [NoteGod vs Evernote comparison](/blog/notegod-vs-evernote-which-is-right-for-you).
 
 Neither is "better." They're different tools for different jobs. If the second description sounds like you, [try NoteGod for free](/) — no credit card, no setup, just start writing.

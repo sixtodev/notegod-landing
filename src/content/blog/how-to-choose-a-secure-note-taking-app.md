@@ -64,4 +64,6 @@ To be transparent: this is strong encryption at rest plus isolation — not end-
 
 Don't take "secure" at face value. Ask where the encryption happens, who can read your data, and whether it trains AI. An app that answers those questions plainly — in its docs, not just its marketing — is one you can actually trust.
 
+Security is one half of the equation. Once you've picked an app you trust, the next step is [organizing your notes so you can actually find them later](/blog/how-to-organize-notes-so-you-find-them).
+
 You can [read how we handle your data](/privacy) or [try NoteGod for free](/).
