@@ -34,7 +34,7 @@ None of this makes Evernote a bad product. It's simply optimizing for a differen
 NoteGod is built for the person who wants to **just write and keep it private** — students, freelancers, writers, and small teams who value getting an idea down over managing a heavy archive. Its priorities are different on purpose:
 
 - **A fair, predictable price.** A capable free plan with no credit card required, and Pro at $2.99/mo — affordable instead of creeping upward over time.
-- **Private by default.** Your notes are [encrypted at rest with AES-256](/blog/how-to-choose-a-secure-note-taking-app), isolated per account, and never sold or used for AI training. For freelancers, that means client notes stay confidential.
+- **Encrypted by default.** Your notes are [encrypted at rest with AES-256](/blog/how-to-choose-a-secure-note-taking-app), isolated per account, and never sold or used for AI training. And when client notes need to stay confidential even from us, the opt-in Private Vault adds zero-knowledge encryption to the note body.
 - **Simplicity first.** Open it and write. Rich formatting, organization, search, and sharing — without the bloat.
 
 It keeps the essentials and drops the weight, so the app gets out of your way.

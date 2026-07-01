@@ -16,7 +16,7 @@ const APP_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.notegod.io';
         <span class="text-noter-text-muted" style="font-size: 0.7em;">Everywhere.</span>
       </h1>
       <p class="text-noter-text-muted text-lg max-w-xl mb-8 leading-relaxed">
-        The all-in-one notes app: encrypted, collaborative, and refreshingly simple — at a fair $2.99. Built for students, freelancers, and small teams.
+        The all-in-one notes app with a true zero-knowledge vault — lock your most sensitive notes so no one can read them, not even us. Collaborative, offline-ready, and refreshingly simple for students, freelancers, and small teams.
       </p>
       <div class="flex flex-wrap gap-4 mb-4">
         <a href={`${APP_URL}/register`} class="inline-flex items-center px-8 py-4 font-semibold text-black rounded-xl text-base transition-all hover:brightness-110 hover:-translate-y-0.5" style="background: linear-gradient(135deg, #edff00, #b8d900);">
@@ -91,8 +91,9 @@ const APP_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.notegod.io';
               <div class="flex items-center gap-2 text-xs text-noter-text-muted">
                 <span class="text-noter-text-dim">&#9744;</span> Launch beta
               </div>
-              <div class="mt-4 h-16 rounded-lg bg-noter-surface-hover border border-noter-border flex items-center justify-center">
-                <span class="text-xs text-noter-text-dim">image.png</span>
+              <div class="mt-4 h-16 rounded-lg bg-noter-surface-hover border border-noter-border flex items-center justify-center gap-2 text-noter-text-dim">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                <span class="text-xs">roadmap-sketch.png</span>
               </div>
             </div>
           </div>
